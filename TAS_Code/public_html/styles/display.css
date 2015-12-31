@@ -8,16 +8,39 @@ and open the template in the editor.
     Author     : Pritesh
 */
 
-i.up {
-    content:url(../icons/ic_keyboard_arrow_up_black_36px.svg);
+i.up_black {
+    content:url(../icons/keyboard_arrow_up_black.svg);
 }
-i.right {
-    content:url(../icons/ic_keyboard_arrow_right_black_36px.svg);
+i.right_black {
+    content:url(../icons/keyboard_arrow_right_black.svg);
 }
-
+i.down_black {
+    content:url(../icons/keyboard_arrow_down_black.svg);
+}
+i.menu_black {
+    content:url(../icons/menu_black.svg);
+}
+i.menu_white {
+    content:url(../icons/menu_white.svg);
+}
+i.send_black {
+    content:url(../icons/send_black.svg);
+}
+i.send_white {
+    content:url(../icons/send_white_24px.svg);
+}
 body {
     background-color: rgba(0, 0, 0, 0.07);
 }
+i {
+    padding:20%;
+}
+
+.hidden{
+    display:none;
+}
+
+/*
 .title {
     display: inline;
     font-size: 3em;
@@ -68,7 +91,4 @@ body {
 .color-accent {
     color: #e040fb;
 }
-
-.hidden{
-    display:none;
-}
+*/

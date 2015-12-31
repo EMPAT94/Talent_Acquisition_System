@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+    
+    
     $('.login-btn').on('click',function () {
         $('.login-form').slideToggle('slow');
     });
@@ -14,5 +16,9 @@ $(document).ready(function () {
         else {
             $('#logreg').text("Login");
         }
+    });
+    
+    $('.menu_white').on('click',function () {
+        $(this).closest('div').find('.button-collapse').sideNav();
     });
 });
