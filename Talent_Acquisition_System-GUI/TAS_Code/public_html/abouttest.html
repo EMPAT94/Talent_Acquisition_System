@@ -6,70 +6,93 @@
 
         <script src="scripts/jquery.js"></script>
         <script src="scripts/materialize.js"></script>
-        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />
-
+        <script src="scripts/jquery-ui.js"></script>
         <script src="scripts/animation.js"></script>
+
+
+        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />        
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jquery-ui.css" />
         <link rel="shortcut icon" href="favicon.ico">
 
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                position: relative;
+                -webkit-animation: animate 1.5s;
+            }
+
+            @-webkit-keyframes animate {
+                0% {
+                    transform: translate3d(-2000px, -2000px, 0px);
+                    animation-timing-function: ease-in;
+                }
+                50% {
+                    transform: translate3d(-500px, -500px, 0%);
+                }
+                100% {
+                    transform: translate3d(0px, 0px, 0px);
+                    animation-timing-function: ease-out;
+                }
+            }
+
+        </style>
+
     </head>
-    <body> 
+    <body>
+
         <nav >
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Talent Acquisition System</a>
+            <div class="nav-wrapper yellow lighten-2">
+                <a href="#!" class="brand-logo teal-text">About Test</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="menu_white">menu</i>
                 </a>
             </div>
         </nav>
 
-        <h1 align= "center"><font color="grey">About Test</font></h1>
-
-
         <!-- Image Card -->
         <div class="container row">
             <div class="col s20 m20">
                 <div class="card">
                     <div class="card-image">
-                        <img src="images/1.jpg">
+                        <img src="images/abouttest.jpg">
 
                     </div>
                     <div class="card-content">
-
-                        <p><font face="Trebuchet MS", Helvetica, sans-serif size="5px">
-                                 Swiss psychiatrist Carl Jung developed a theory early in the 20th century to describe basic 
-                                 individual preferences and explain similarities and differences between people. <p> <br>
-
-                            The Carl Jung stated that <p><i><font size="3px">"when we are active and we are awake we think for a situation or condition in various 
-                                ways i.e. we find various alternatives for the same. Response differs from person to person. 
-                                When a situation is given the person either think about it internally i.e. by what their mind is thinking 
-                                and the other response could be in externally i.e. how the external conditions are and how the other 
-                                people react can affect the decision. The decisions are nothing but patterns."</font></i><p><br>
-
+                            Swiss psychiatrist Carl Jung developed a theory early in the 20th century to describe basic 
+                            individual preferences and explain similarities and differences between people.
+                        
+                            <br>
+                            <br>
+                            The Carl Jung stated that <br>
+                        
+                            <span class="quote"><br>"when we are active and we are awake we think for a situation or condition in various 
+                            ways i.e. we find various alternatives for the same. Response differs from person to person. 
+                            When a situation is given the person either think about it internally i.e. by what their mind is thinking 
+                            and the other response could be in externally i.e. how the external conditions are and how the other 
+                            people react can affect the decision. The decisions are nothing but patterns."
+                            </span>
+                        
+                            <br>
+                            <br>
                             The TAS test will tell you about which type of personality you belong to. It will not tell you that you should do this and that. 
                             It involves client feedback and agreement. It inherits the strength and weakness of each pattern. It does not 
                             judge you on how you look or whether you are going through any psychological problem it will only judge you on 
                             what response you are giving to the situation. The output given by this test is accurate.
-                            </font></p>
+                        
                     </div>                  
                 </div>
             </div>
         </div>
         <!-- Image Card End -->
-        
-        
+
+
         <!-- Button at the bottom right --> 
-        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-            <a class="waves-effect waves-light btn-large">Home</a>
+        <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
+            <a href="home.html" class="waves-effect waves-light btn-large yellow lighten-2 teal-text">Home</a>
         </div>
         <!--Button End -->
-
-
-
-        <!-- Button at the bottom right -->
-        <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-            <a class="waves-effect waves-light btn-large">Next</a>
-        </div>
 
     </body>
 </html>

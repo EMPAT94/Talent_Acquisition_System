@@ -30,7 +30,9 @@ i.send_white {
     content:url(../icons/send_white_24px.svg);
 }
 body {
-    background-color: rgb(255,172,117);
+    background-color: rgba(0, 0, 0, 0.07);
+    letter-spacing: 1.5px;
+    font-family: Verdana, Geneva, sans-serif;
 }
 i {
     padding:20%;
@@ -40,45 +42,13 @@ i {
     display:none;
 }
 
-.clickBrain{
-	float: right;
-  -webkit-animation-duration: 4s;
-  -webkit-animation-delay: 1s;
-  -webkit-animation-iteration-count: 20;
 
+.quote {
+    font-weight:  bold;
+    letter-spacing: 2px;
+    font-style:italic;
+    font-family: Tahoma, Geneva, sans-serif;
 }
-
-.brain{
-	float: middle;
-}
-
-.gap{ height:120px;
-}
-
-
-.html{
-	  -webkit-animation-duration: 1.2s;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-iteration-count: 1;
-
-}
-
-.a{}
-
-
-.bp1{
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
- 
-.bp1:hover {
-  -webkit-filter: grayscale(100%);
-}
-
-
 
 /*
 .title {

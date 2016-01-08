@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TAS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/materialize.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />
+
+        <script src="scripts/animation.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles/display.css" />
+        <link rel="shortcut icon" href="favicon.ico">
+
+    </head>
+    <script>
+        $(document).ready(function () {
+            $('.rest').slideDown(1000);
+            $('#brain').click(function () {
+                $(this).closest('div').delay('fast').fadeOut();
+                $(this).closest('.mainBrain').find('.brainParts').delay('slow').fadeIn('slow');
+            });
+
+
+        });
+    </script>
+
+    <body>
+
+
+        <div class="rest  hidden">
+            <div class="mainBrain">
+                <div class="container">
+                    <img id="brain" src="images/Brain.png" style="cursor:zoom-in;">
+                </div>
+                <div class="hidden brainParts">
+                    <a href="aboutTest.html">
+                        <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;" title="About MBTI Test">
+                    </a>        
+                    <a href="instructions.html">
+                        <img src="images/redBrain.png" style="position:absolute;top:25px;left:500px;" title="Instructions">
+                    </a>
+                    <a href="">
+                        <img src="images/greenBrain.png" style="position:absolute;top:300px;left:300px;" title="Upcoming">
+                    </a>        
+                    <a href="personality.html">
+                        <img src="images/blueBrain.png" style="position:absolute;top:200px;left:700px;" title="Personality Profiles">
+                    </a>
+                    <a href="">
+                        <img src="images/medullaBrain.png" style="position:absolute;top:450px;left:450px;" title="Upcoming">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Button at the bottom right --> 
+            <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+                <a href="loginTest.php" class="waves-effect waves-light btn-large">Test</a>
+            </div>
+            <!--Button End -->
+            <!-- Button at the bottom right --> 
+            <div class="go-btn" style="position: fixed; bottom: 20px; left: 50%;">
+                <a href="loginTest.php" class="waves-effect waves-light btn-large">Test</a>
+            </div>
+            <!--Button End -->
+            <!-- Button at the bottom right --> 
+            <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
+                <a href="loginTest.php" class="waves-effect waves-light btn-large">Test</a>
+            </div>
+            <!--Button End -->
+
+
+        </div>
+    </body>
+</html>

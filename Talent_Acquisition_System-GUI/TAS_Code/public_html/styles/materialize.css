@@ -6652,8 +6652,6 @@ nav ul a span.badge {
   width: 90%;
 }
 
-
-
 @media only screen and (min-width: 601px) {
   .container {
     width: 85%;
@@ -7617,21 +7615,18 @@ small {
 @media only screen and (min-width: 360px) {
   .flow-text {
     font-size: 1.2rem;
-	
   }
 }
 
 @media only screen and (min-width: 390px) {
   .flow-text {
     font-size: 1.224rem;
-
   }
 }
 
 @media only screen and (min-width: 420px) {
   .flow-text {
     font-size: 1.248rem;
-	
   }
 }
 
@@ -7650,10 +7645,7 @@ small {
 @media only screen and (min-width: 510px) {
   .flow-text {
     font-size: 1.32rem;
-	
   }
-  
-}
 }
 
 @media only screen and (min-width: 540px) {
@@ -7672,7 +7664,7 @@ small {
   .flow-text {
     font-size: 1.392rem;
   }
-  
+}
 
 @media only screen and (min-width: 630px) {
   .flow-text {
