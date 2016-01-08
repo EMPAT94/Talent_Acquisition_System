@@ -38,14 +38,14 @@
         <!--navigation bar markup -->
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">TAS</a>
+                <a href="#!" class="brand-logo">TALENT ACQUISITION SYSTEM</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="menu_white"></i>
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="sass.html"></a></li>
                     <li><a href="badges.html"></a></li>
-                    <li><a href="collapsible.html"></a></li>
+                    <li><a href="collapsible.html"><a href="loginTest.php"><font face= "Comic Sans MS", cursive, sans-serif size="3px">Login/Register</font></a></a></li>
                     <li><a href="mobile.html"></a></li>
                 </ul>
                 <ul class="side-nav">
@@ -112,6 +112,30 @@
             </div>
         </div>
         <!-- End of form code -->
+<div class="mainBrain">
+                <div class="container">
+                    <img id="brain" src="images/Brain.png" style="cursor:zoom-in;">
+                    <img id="clickBrain" src="images/clickBrain.png" style="float:right;">
+                </div>
+                <div class="hidden brainParts">
+                    <a href="aboutTest.html">
+                        <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;cursor:zoom-in;" title="About MBTI Test">
+                    </a>        
+                    <a href="instructions.html">
+                        <img src="images/redBrain.png" style="position:absolute;top:25px;left:500px;" title="Instructions">
+                    </a>
+                    <a href="">
+                        <img src="images/greenBrain.png" style="position:absolute;top:300px;left:300px;" title="Upcoming">
+                    </a>        
+                    <a href="personality.html">
+                        <img src="images/blueBrain.png" style="position:absolute;top:200px;left:700px;" title="Personality Profiles">
+                    </a>
+                    <a href="">
+                        <img src="images/medullaBrain.png" style="position:absolute;top:450px;left:450px;" title="Upcoming">
+                    </a>
+                    <img id="clickBrain" src="images/clickBrain2.png" style="float:right;">
+                </div>
+            </div>
     </body>
 </html>
 

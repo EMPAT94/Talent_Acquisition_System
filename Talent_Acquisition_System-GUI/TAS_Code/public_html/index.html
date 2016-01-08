@@ -44,10 +44,90 @@ and open the template in the editor.
             }
         </style>
         <div class="welcome hidden">
-            <span >Welcome</span>                
+            <span >Welcome <br> to <br> Talent Acquisition System</span>                
         </div>
 
         <div class="rest  hidden">
+
+    <!--navigation bar markup -->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">TALENT ACQUISITION SYSTEM</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="menu_white"></i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html"></a></li>
+                    <li><a href="badges.html"></a></li>
+                    <li><a href="collapsible.html"><a href="loginTest.php"><font face= "Comic Sans MS", cursive, sans-serif size="3px">Login/Register</font></a></a></li>
+                    <li><a href="mobile.html"></a></li>
+	    </ul>
+                <ul class="side-nav">
+                    <li><a href="sass.html"></a></li>
+                    <li><a href="badges.html"></a></li>
+                    <li><a href="collapsible.html"></a></li>
+                    <li><a href="mobile.html"></a></li>
+	   </ul>
+     
+            </div>
+        </nav>
+        <!--end of navigation bar markup -->
+
+        <div class = "container" >
+            <div class = 'row'>
+                <div class = "card">
+                    <!--Login Form -->
+                    <form class = "login col s12" hidden>
+                        <div class = "row">
+                            <div class = "input-field col s4">
+                                <input id = "first_name" type = "email" class = "validate">
+                                <label for = "first_name">Email</label>
+                            </div>
+                            <div class = "input-field col s4">
+                                <input id = "last_name" type = "password" class = "validate">
+                                <label for = "last_name">Password</label>
+                            </div>
+                            <div class = "input-field col s4">
+                                <input type="submit" class="btn-large red"name="submit" style="float:right;" >
+                            </div>
+                        </div>
+                    </form>
+
+                    <form action="loginProcessing.php" method="post"  class = "col s12 register hidden" >
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="first_name" type="text" class="validate">
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="last_name" type="text" class="validate">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input name="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s8">
+                                <input name="email" type="email" class="validate" >
+                                <label for="email">Email</label>
+                            </div>
+                            <div class = "input-field col s4">
+                                <input type="submit" class="btn-large red"name="submit" style="float:right;" >
+                            </div>
+                        </div>  
+	    <div class="card-action">
+                        <a href="#" id="logreg">Register</a>
+                    </div>   
+                    </form>
+                          
+                </div>
+            </div>
+        </div>
+        <!-- End of form code -->
 
             <div class="mainBrain">
                 <div class="container">
@@ -56,7 +136,7 @@ and open the template in the editor.
                 </div>
                 <div class="hidden brainParts">
                     <a href="aboutTest.html">
-                        <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;" title="About MBTI Test">
+                        <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;cursor:zoom-in;" title="About MBTI Test">
                     </a>        
                     <a href="instructions.html">
                         <img src="images/redBrain.png" style="position:absolute;top:25px;left:500px;" title="Instructions">
@@ -73,6 +153,9 @@ and open the template in the editor.
                     <img id="clickBrain" src="images/clickBrain2.png" style="float:right;">
                 </div>
             </div>
+
+   
+
 
         </div>
     </body>
