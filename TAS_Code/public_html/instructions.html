@@ -11,26 +11,29 @@
         <script src="scripts/animation.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
         <link rel="shortcut icon" href="favicon.ico">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                position: relative;
+                -webkit-animation: animate 1.5s;
+            }
 
-<style>
-body {
-	margin: 0px;
-	padding: 0px;
-	position: relative;
-	-webkit-animation: animate 0.5s;
-}
+            @-webkit-keyframes animate {
+                0% {
+                    transform: translate3d(500px, 500px, 0px);
+                    animation-timing-function: ease-in;
+                }
+                50% {
+                    transform: translate3d(250px, 250px, 0px);
+                }
+                100% {
+                    transform: translate3d(0px, 0px, 0px);
+                    animation-timing-function: ease-out;
+                }
+            }
 
-	@-webkit-keyframes animate {
-		from {
-			
-			left: 600px;
-		}
-		to {
-			left: 0px;
-		}
-	}
-
-</style>
+        </style>
 
     </head>
     <body> 
@@ -40,41 +43,41 @@ body {
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="menu_white">menu</i>
                 </a>
-                 </div>
+            </div>
         </nav>
 
-      
-	<h1 align="center"><font color="#039be5 light-blue ">Instructions</font></h1>
 
-<!-- Image Card -->
+        <h1 align="center"><font color="#039be5 light-blue ">Instructions</font></h1>
+
+        <!-- Image Card -->
         <div class="container row">
             <div class="col s20 m20">
                 <div class="card">
                     <div class="card-image">
                         <img src="images/instructions.jpg">
-                        
+
                     </div>
-       
-                  <div class="card-content">
-                       	 <p><font face="Trebuchet MS", Helvetica, sans-serif size="5px">
-		For taking this test, you need to follow these instructions:-<br>
-		<ol>
- 			 <li>There are no right answers to any of these questions.</li>
- 			 <li>Answer the questions quickly, do not over-analyze them.</li>
-  			 <li>Some seem worded poorly. Go with what feels best.</li>
-			 <li>Answer the questions as "the way you are", not "the way you'd like to be seen by others"</li>
-			 <li>Do not look at the scoring sheet until you have completed all the questions.</li>
-		</ol>
-		   	
-	        </font></p>
+
+                    <div class="card-content">
+                        <p><font face="Trebuchet MS", Helvetica, sans-serif size="5px">
+                                 For taking this test, you need to follow these instructions:-<br>
+                        <ol>
+                            <li>There are no right answers to any of these questions.</li>
+                            <li>Answer the questions quickly, do not over-analyze them.</li>
+                            <li>Some seem worded poorly. Go with what feels best.</li>
+                            <li>Answer the questions as "the way you are", not "the way you'd like to be seen by others"</li>
+                            <li>Do not look at the scoring sheet until you have completed all the questions.</li>
+                        </ol>
+
+                        </font></p>
                     </div>                  
                 </div>
             </div>
         </div>
         <!-- Image Card End -->
 
-        
-<!-- Button at the bottom left -->
+
+        <!-- Button at the bottom left -->
         <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
             <a href="index2.html" class="waves-effect waves-light btn-large">< Back</a>
         </div>

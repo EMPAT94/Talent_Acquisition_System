@@ -6,34 +6,42 @@
 
         <script src="scripts/jquery.js"></script>
         <script src="scripts/materialize.js"></script>
-        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />
-
+        <script src="scripts/jquery-ui.js"></script>
         <script src="scripts/animation.js"></script>
+
+
+        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />        
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jquery-ui.css" />
         <link rel="shortcut icon" href="favicon.ico">
 
-<style>
-body {
-	margin: 0px;
-	padding: 0px;
-	position: relative;
-	-webkit-animation: animate 0.5s;
-}
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                position: relative;
+                -webkit-animation: animate 1.5s;
+            }
 
-	@-webkit-keyframes animate {
-		from {
-			
-			right: 600px;
-		}
-		to {
-			right: 0px;
-		}
-	}
+            @-webkit-keyframes animate {
+                0% {
+                    transform: translate3d(-500px, -500px, 0px);
+                    animation-timing-function: ease-in;
+                }
+                50% {
+                    transform: translate3d(-250px, -250px, 0%);
+                }
+                100% {
+                    transform: translate3d(0px, 0px, 0px);
+                    animation-timing-function: ease-out;
+                }
+            }
 
-</style>
+        </style>
 
     </head>
-    <body> 
+    <body>
+
         <nav >
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo"><font color="#fff9c4 yellow lighten-4">Talent Acquisition System</font></a>
@@ -76,19 +84,19 @@ body {
             </div>
         </div>
         <!-- Image Card End -->
-        
-        
-          <!-- Button at the bottom left --> 
-            <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-                <a href="index2.html" class="waves-effect waves-light btn-large">< Back</a>
-            </div>
-            <!--Button End -->
 
-            <!-- Button at the bottom right --> 
-            <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-                <a class="waves-effect waves-light btn-large">Home</a>
-            </div>
-            <!--Button End -->
+
+        <!-- Button at the bottom left --> 
+        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+            <a href="index2.html" class="waves-effect waves-light btn-large">< Back</a>
+        </div>
+        <!--Button End -->
+
+        <!-- Button at the bottom right --> 
+        <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
+            <a class="waves-effect waves-light btn-large">Home</a>
+        </div>
+        <!--Button End -->
 
     </body>
 </html>
