@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
     
     $('.mainBrain').on('mouseenter','img', function(){
-        $(this).animate({zoom: '105%'},'fast');
+        $(this).animate({zoom: '103%'},'fast');
         $(this).find('.data').fadeIn();
     });
      $('.mainBrain').on('mouseleave', 'img', function(){

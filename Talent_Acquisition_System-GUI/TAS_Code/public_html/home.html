@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+This is the home page; serving as the central hub for links to rest of the pages. This is a derivative of
+index.html page minus the "welcome" animation.
 -->
 <html>
     <head>
@@ -17,28 +16,43 @@ and open the template in the editor.
         <script src="scripts/animation.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
         <link rel="shortcut icon" href="favicon.ico">
+        <script>
+            $(document).ready(function () {
 
-    </head>
-    <script>
-        $(document).ready(function () {
-            $('.rest').slideDown(1000);
-            $('#brain').click(function () {
-                $(this).closest('div').delay('fast').fadeOut();
-                $(this).closest('.mainBrain').find('.brainParts').delay('slow').fadeIn('slow');
+                $('.rest').slideDown(1000); //slide down the brain section
+
+                /* this code creates the brain explode animation */
+                $('#brain').click(function () {
+                    $(this).closest('div').delay('fast').fadeOut();
+                    $(this).closest('.mainBrain').find('.brainParts').delay('slow').fadeIn('slow');
+                });
+
+
             });
+        </script>
+    </head>
 
-
-        });
-    </script>
 
     <body>
 
-
+        <!-- This markup contains images of Brain and Brain Parts -->
         <div class="rest  hidden">
             <div class="mainBrain">
+
+                <!-- Whole Brain Section -->
                 <div class="container">
                     <img id="brain" src="images/Brain.png" style="cursor:zoom-in;">
+                    <img id="clickBrain" src="images/clickBrain.png" style="float:right;">
+
+                    <!-- Button at the bottom right for Testing--> 
+                    <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
+                        <a href="loginTest.php" class="waves-effect waves-light btn-large">Test Button</a>
+                    </div>
+                    <!--Button End -->
+
                 </div>
+
+                <!-- Brain Parts Section -->
                 <div class="hidden brainParts">
                     <a href="aboutTest.html">
                         <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;" title="About MBTI Test">
@@ -55,26 +69,17 @@ and open the template in the editor.
                     <a href="">
                         <img src="images/medullaBrain.png" style="position:absolute;top:450px;left:450px;" title="Upcoming">
                     </a>
+                    <img id="clickBrain" src="images/clickBrain2.png" style="float:right;">
+
+                    <!-- Button at the bottom right for Testing--> 
+                    <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
+                        <a href="loginTest.php" class="waves-effect waves-light btn-large">Button Test</a>
+                    </div>
+                    <!--Button End -->
                 </div>
             </div>
-
-            <!-- Button at the bottom right --> 
-            <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-                <a href="loginTest.php" class="waves-effect waves-light btn-large">Test</a>
-            </div>
-            <!--Button End -->
-            <!-- Button at the bottom right --> 
-            <div class="go-btn" style="position: fixed; bottom: 20px; left: 50%;">
-                <a href="loginTest.php" class="waves-effect waves-light btn-large">Test</a>
-            </div>
-            <!--Button End -->
-            <!-- Button at the bottom right --> 
-            <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-                <a href="loginTest.php" class="waves-effect waves-light btn-large">Test</a>
-            </div>
-            <!--Button End -->
-
-
+            <!-- End of Brain Section -->
+            
         </div>
     </body>
 </html>

@@ -20,18 +20,18 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="menu_white">menu</i>
                 </a>
-     <ul class="right hide-on-med-and-down">
-                <!--    <li><a href="sass.html">1</a></li>
-                    <li><a href="badges.html">2</a></li>
-                    <li><a href="collapsible.html">3</a></li> -->
-	    <li><a href="register.html">Sign Up</a></li>
+                <ul class="right hide-on-med-and-down">
+                    <!--    <li><a href="sass.html">1</a></li>
+                        <li><a href="badges.html">2</a></li>
+                        <li><a href="collapsible.html">3</a></li> -->
+                    <li><a href="register.html">Sign Up</a></li>
                     <li><a href="#" class="login-btn">Sign In</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                 <!--   <li><a href="sass.html">1</a></li>
-                    <li><a href="badges.html">2</a></li>
-                    <li><a href="collapsible.html">3</a></li>  -->
-	    <li><a href="#">Sign Up</a></li>
+                    <!--   <li><a href="sass.html">1</a></li>
+                       <li><a href="badges.html">2</a></li>
+                       <li><a href="collapsible.html">3</a></li>  -->
+                    <li><a href="#">Sign Up</a></li>
                     <li><a href="#" class="login-btn">Sign In</a></li>
                 </ul> 
             </div>
@@ -51,7 +51,7 @@
 
                                 <div class="input-field col s6">
                                     <input id="password" type="password" class="validate" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-				title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters">
+                                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters">
                                     <label for="password">Password</label>
                                 </div>
                             </div>
@@ -67,45 +67,45 @@
                                     <label for="last_name">Last Name</label>
                                 </div>
                             </div>
-                           <div class="row">
+                            <div class="row">
                                 <div class="input-field col s12">
                                     <input id="email" type="email" class="validate">
                                     <label for="email">Email</label>
                                 </div>
-		</div>
- 		<div class="row">
+                            </div>
+                            <div class="row">
                                 <div class="input-field col s12">
                                     <input id="password" type="password" class="validate" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-				title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters">
+                                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters">
                                     <label for="password">Password</label>
                                 </div>
-                             </div>
-		<div class="row">
+                            </div>
+                            <div class="row">
                                 <div class="input-field col s12">
                                     <input id="confirm" type="password" class="validate" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-				title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters">
+                                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters">
                                     <label for="confirm">Confirm Password</label>
                                 </div>
-                             </div>
-                         
+                            </div>
+
                         </form>
-<script type="text/javascript">
-$(document).on('click', '.formsubmitbutton', function(e) {
-    e.preventDefault();
-    $.ajax({
-        type: "POST",
-        url: $(".form").attr('action'),
-        data: $(".form").serialize(),
-        success: function(response) {
-             if (response === "success") {
-                  window.reload;
-             } else {
-                   alert("invalid username/password.  Please try again");
-             }
-        }
-    });
-});
-</script>
+                        <script type="text/javascript">
+                            $(document).on('click', '.formsubmitbutton', function (e) {
+                                e.preventDefault();
+                                $.ajax({
+                                    type: "POST",
+                                    url: $(".form").attr('action'),
+                                    data: $(".form").serialize(),
+                                    success: function (response) {
+                                        if (response === "success") {
+                                            window.reload;
+                                        } else {
+                                            alert("invalid username/password.  Please try again");
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
                         <div class="card-action">
                             <a href="#" id="logreg">Register</a>
                         </div>
@@ -137,7 +137,7 @@ $(document).on('click', '.formsubmitbutton', function(e) {
         </div>
         <!-- Image Card End -->
 
-        
+
 
 
         <!-- Button at the bottom right -->

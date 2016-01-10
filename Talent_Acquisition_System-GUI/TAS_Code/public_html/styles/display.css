@@ -50,55 +50,13 @@ i {
     font-family: Tahoma, Geneva, sans-serif;
 }
 
-/*
-.title {
-    display: inline;
-    font-size: 3em;
+.bottomLogo{
+    position:absolute; 
+    bottom: 10px; 
+    left:50%;
+    font-family: "Times New Roman", Times, serif;
+    font-size:0.9em;
     font-weight: bold;
+    color: rgba(0,0,0,0.5);
+    text-align: center;
 }
-
-.color-light-bg {
-    background-color: #fdfd96;
-}
-
-.color-light {
-    color: #d3d3d3;
-}
-
-.color-dark-bg {
-    background-color: #2f4f4f;
-}
-
-.color-dark {
-    color: #2f4f4f;
-}
-
-.color-dark-primary-bg {
-    background-color: #303f9f;
-}
-
-.color-primary-bg {
-    background-color: #3f51b5;
-}
-
-.color-light-primary-bg {
-    background-color: #c5cae9;
-}
-.color-accent-bg {
-    background-color: #e040fb;
-}
-.color-dark-primary {
-    color: #303f9f;
-}
-
-.color-primary {
-    color: #3f51b5;
-}
-
-.color-light-primary {
-    color: #c5cae9;
-}
-.color-accent {
-    color: #e040fb;
-}
-*/
