@@ -29,6 +29,10 @@ i.send_black {
 i.send_white {
     content:url(../icons/send_white_24px.svg);
 }
+
+i.help_white {
+    content:url(../icons/help_white.svg);
+}
 body {
     background-color: rgba(0, 0, 0, 0.07);
     letter-spacing: 1.5px;
@@ -48,15 +52,4 @@ i {
     letter-spacing: 2px;
     font-style:italic;
     font-family: Tahoma, Geneva, sans-serif;
-}
-
-.bottomLogo{
-    position:absolute; 
-    bottom: 10px; 
-    left:50%;
-    font-family: "Times New Roman", Times, serif;
-    font-size:0.9em;
-    font-weight: bold;
-    color: rgba(0,0,0,0.5);
-    text-align: center;
 }

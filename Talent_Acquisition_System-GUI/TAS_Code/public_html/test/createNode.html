@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+This is the page that is a basic construct used to input information about
+Questions and choices.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>	
+		<form action="createChoice.php" method="post">
+            <br>
+			Choice No: <input type="number" name="cno" min="1"/> <br><br><br>
+            Choice : <textarea name="ch" cols="100"></textarea><br><br><br>
+            For Question no : <input type="number" name="qno" min="1"/> <br><br><br>
+            Trait : <input type="TEXT" name="trt" /> <br><br><br>
+            Weight : <input type="number" name="wt" min="1" max="5"/> <br><br><br>
+            <input type="submit" >
+        </form>
+        <form action="createQuestion.php" method="post">
+              <br>
+            Question No : <input type="number" name="qno" min="1"/> <br><br><br>
+            Question : <textarea name="que" cols="100"></textarea><br><br><br>
+            Trait : <input type="TEXT" name="trt" /> <br><br><br>
+            Weight : <input type="number" name="wt" min="1" max="5"/> <br><br><br>
+            <input type="submit" >
+        </form>
+    </body>
+</html>

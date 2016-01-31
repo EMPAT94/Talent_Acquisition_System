@@ -23,19 +23,33 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
 
                 $('.welcome').delay('fast').fadeIn('slow'); //fadeIn the logo
                 $('.welcome').delay('slow').fadeOut('slow'); //fadeOut the welcome text
-                setTimeout(function () {
-                    $('.welcome').text('To Talent Acquisition System').fadeIn('fast'); //Change Text
-                    $('.welcome').delay('slow').fadeOut('slow'); //fadeOut the logo
-                }, 2000);
-
-                $('.rest').delay(3500).slideDown(1000); //slide down the brain section
+                $('.rest').delay(2000).slideDown(1000); //slide down the brain section
 
                 /* this code creates the brain explode animation */
                 $('#brain').click(function () {
                     $(this).closest('div').delay('fast').fadeOut();
                     $(this).closest('.mainBrain').find('.brainParts').delay('slow').fadeIn('slow');
+                    $('#clickBrain2').delay(4000).fadeOut('slow');
                 });
 
+
+                /* this is the code associated with popping up login form and futher animations in same */
+                $('.loginBtn').click(function () {
+                    $('.lrform').fadeToggle();
+                });
+                $('#close').click(function () {
+                    $('.lrform').fadeOut();
+                });
+                $('#logreg').click(function () {
+                    $(this).closest('.card').find('.login').slideToggle();
+                    $(this).closest('.card').find('.register').slideToggle();
+                    var l = $(this).text();
+                    if (l == "Register") {
+                        $(this).text("Login");
+                    } else {
+                        $(this).text("Register");
+                    }
+                });
 
             });
         </script>
@@ -51,10 +65,82 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                 font-size:3em;
                 font-family:"Comic Sans MS", cursive, sans-serif;
             }
+
+            .lrform {
+                z-index: 10;
+                position: fixed;
+                bottom: 50px;
+                right:0px;
+                width:50%;
+            }
         </style>
         <div class="welcome hidden">
-            <span >Welcome</span>                
+            <span >Welcome<br> To Talent Acquisition System</span>                
         </div>
+
+        <!-- Form code Start -->
+        <div class="lrform hidden" >
+            <div class="container">
+                <div class = 'row'>
+                    <div class = "card" style="box-shadow: 0px 0px 0px 2000px rgba(0,0,0,0.3);">
+                        <!--Login Form -->
+                        <form action="logProcessing.php" method="post"  class = "login col s12" >
+                            <div class = "row">
+                                <div class = "input-field col s5">
+                                    <input name = "l_email" type = "email" class = "validate" required autofocus>
+                                    <label for = "l_email">Email</label>
+                                </div>
+                                <div class = "input-field col s5">
+                                    <input name = "l_pwd" type = "password" class = "validate" required >
+                                    <label for = "l_pwd">Password</label>
+                                </div>
+                                <div class = "input-field col s2">
+                                    <button type="submit" class="btn-floating btn-large red" style="float:right;"><i class="send_white"></i></button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Registration Form -->
+                        <form action="regProcessing.php" method="post"  class = "col s12 register hidden" >
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input name="first_name" type="text" class="validate" required autofocus>
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input name="last_name" type="text" class="validate" required >
+                                    <label for="last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input name="password" type="password" class="validate" required >
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s10">
+                                    <input name="email" type="email" class="validate" required  >
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class = "input-field col s2">
+                                    <button type="submit" class="btn-floating btn-large red" style="float:right;">
+                                        <i class="send_white"></i>
+                                    </button>
+                                </div>
+                            </div>  
+                        </form>
+
+                        <!-- Link to switch between login and register -->
+                        <div class="card-action">
+                            <a href="#" id="logreg">Register</a>
+                            <a href="#" id="close" >Close</a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of form code -->
 
 
         <!-- This markup contains images of Brain and Brain Parts -->
@@ -68,47 +154,56 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
 
                     <!-- Button at the bottom right for Login/Registration--> 
                     <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-                        <a href="loginTest.php" class="waves-effect waves-light btn-large">Login</a>
+                        <a class="waves-effect waves-light btn-large loginBtn">Login</a>
                     </div>
                     <!--Button End -->
 
+                    <!-- Button at the bottom right for Help--> 
+                    <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+                        <a class="waves-effect waves-light btn-large ">Help</a>
+                    </div>
+                    <!--Button End -->
                 </div>
 
                 <!-- Brain Parts Section -->
                 <div class="hidden brainParts">
-                    <a href="aboutTest.html">
+                    <a href="aboutTest.html" style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="About MBTI Test, how and why it matters">
                         <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;" title="About MBTI Test">
                     </a>        
-                    <a href="instructions.html">
+                    <a href="instructions.html" style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Instructions on how to take the test">
                         <img src="images/redBrain.png" style="position:absolute;top:25px;left:500px;" title="Instructions">
                     </a>
-                    <a href="">
+                    <a href=""  style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Under Development">
                         <img src="images/greenBrain.png" style="position:absolute;top:300px;left:300px;" title="Upcoming">
                     </a>        
-                    <a href="personality.html">
+                    <a href="personality.html"  style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Check out various profiles here.">
                         <img src="images/blueBrain.png" style="position:absolute;top:200px;left:700px;" title="Personality Profiles">
                     </a>
-                    <a href="">
+                    <a href=""  style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Under Development">
                         <img src="images/medullaBrain.png" style="position:absolute;top:450px;left:450px;" title="Upcoming">
                     </a>
-                    <img id="clickBrain" src="images/clickBrain2.png" style="float:right;">
+                    <img id="clickBrain2" src="images/clickBrain2.png" style="float:right;">
 
                     <!-- Button at the bottom right for Login/Registration--> 
                     <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-                        <a href="loginTest.php" class="waves-effect waves-light btn-large">SignUp</a>
+                        <a class="waves-effect waves-light btn-large loginBtn">SignUp</a>
+                    </div>
+                    <!--Button End -->
+
+                    <!-- Button at the bottom right for Help--> 
+                    <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+                        <a class="waves-effect waves-light btn-large ">Help</a>
                     </div>
                     <!--Button End -->
 
                 </div>
             </div>        
 
-            <!-- lOGO at the bottom --> 
-            <div class="bottomLogo">
-                Talent Acquisiton System.
-            </div>
-            
         </div>
         <!-- End of Brain Section -->    
+
+
+
 
     </body>
 </html>
