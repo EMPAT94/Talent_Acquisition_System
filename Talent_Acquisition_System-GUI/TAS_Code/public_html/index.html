@@ -31,8 +31,6 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                     $(this).closest('.mainBrain').find('.brainParts').delay('slow').fadeIn('slow');
                     $('#clickBrain2').delay(4000).fadeOut('slow');
                 });
-
-
                 /* this is the code associated with popping up login form and futher animations in same */
                 $('.loginBtn').click(function () {
                     $('.lrform').fadeToggle();
@@ -50,7 +48,24 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                         $(this).text("Register");
                     }
                 });
-
+                $('form').on('submit', function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        type: "POST",
+                        cache: false,
+                        url: $(this).attr('action'),
+                        data: $(this).serialize(),
+                        success: function (data) {
+                            if (data === 1) {
+                                alert('Not Registered');
+                            } else if (data === 2) {
+                                alert('Incorrect Password');
+                            } else {
+                                location.href='profile.php';
+                            }
+                        }
+                    });
+                });
             });
         </script>
     </head>
@@ -154,7 +169,7 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
 
                     <!-- Button at the bottom right for Login/Registration--> 
                     <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-                        <a class="waves-effect waves-light btn-large loginBtn">Login</a>
+                        <a class="waves-effect waves-light btn-large loginBtn">Login / Signup</a>
                     </div>
                     <!--Button End -->
 
@@ -168,19 +183,19 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                 <!-- Brain Parts Section -->
                 <div class="hidden brainParts">
                     <a href="aboutTest.html" style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="About MBTI Test, how and why it matters">
-                        <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;" title="About MBTI Test">
+                        <img src="images/yellowBrain.png" style="position:absolute;top:20px;left:200px;" alt="About MBTI Test">
                     </a>        
                     <a href="instructions.html" style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Instructions on how to take the test">
-                        <img src="images/redBrain.png" style="position:absolute;top:25px;left:500px;" title="Instructions">
+                        <img src="images/redBrain.png" style="position:absolute;top:25px;left:500px;" alt="Instructions">
                     </a>
                     <a href=""  style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Under Development">
-                        <img src="images/greenBrain.png" style="position:absolute;top:300px;left:300px;" title="Upcoming">
+                        <img src="images/greenBrain.png" style="position:absolute;top:300px;left:300px;" alt="Upcoming">
                     </a>        
                     <a href="personality.html"  style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Check out various profiles here.">
-                        <img src="images/blueBrain.png" style="position:absolute;top:200px;left:700px;" title="Personality Profiles">
+                        <img src="images/blueBrain.png" style="position:absolute;top:200px;left:700px;" alt="Personality Profiles">
                     </a>
-                    <a href=""  style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Under Development">
-                        <img src="images/medullaBrain.png" style="position:absolute;top:450px;left:450px;" title="Upcoming">
+                    <a href="test.html"  style="float:right; right:200px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Start the Test here and now!">
+                        <img src="images/medullaBrain.png" style="position:absolute;top:450px;left:450px;" alt="Test">
                     </a>
                     <img id="clickBrain2" src="images/clickBrain2.png" style="float:right;">
 

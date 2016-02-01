@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 /*
   This file tests how the data is retieved from the database and how it is displayed.
  */
@@ -27,12 +28,13 @@ $op = json_encode($result);
 $data = json_decode($op);
 
 if ($data == null) {
-    echo "Not Registered";
+    echo "1";
 } else {
     if ($data->n[0]->password === $password) {
-        echo 'Logged In!';
+        $_SESSION['id'] = $data->n[0]->email;
+        echo $_SESSION['id'];
     } else {
-        echo 'Incorrect Password!';
+        echo '2';
     }
 }
 ?>

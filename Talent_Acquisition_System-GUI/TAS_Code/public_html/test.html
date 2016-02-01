@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Test Page</title>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/materialize.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />
+
+        <script src="scripts/animation.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles/display.css" />
+        <link rel="shortcut icon" href="favicon.ico">
+
+    </head>
+    <body>
+        <script>
+            $(document).ready(function () {
+                var clicks = 1;
+                var prog = 5;
+                $('.btn-question').on('click', function () {
+                    $('.instructions').slideUp();
+                    $('.go-btn').addClass('hidden');
+                    $('.progress').removeClass('hidden');
+                    $.post(
+                            "QR.php",
+                            {value: clicks},
+                            function (data) {
+                                var data = JSON.parse(data);
+                                $('#questionArea').html(data.ss[0].q);
+                                $('#choiceArea1').html(data.cc[0].c);
+                                $('#choiceArea2').html(data.cc[1].c);
+                                $('.questioncard').slideDown();
+                                $('.progress').css({'width': prog + "%"});
+                            });
+                    clicks += 1;
+                    prog += 5;
+                });
+                $('.show-inst').on('click', function () {
+                    $('.instructions').slideToggle();
+                });
+            });
+        </script>
+
+
+        <div class="container">
+            <div class="progress hidden blue-grey">
+                <div class="determinate"></div>
+            </div>
+        </div>
+        <div class="instructions container">
+            <h1>Important Instructions : </h1>
+            <h3>1. Do not Refresh or Cancel </h3>
+            <h3>2. Think and Answer, Cannot go back. </h3>
+            <h3>3. Blah Blah</h3>
+            <h3>4. Blah Blah</h3>
+
+        </div>
+
+        <div class="container row hidden questioncard">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div id="questionArea"> </div>
+                    </div>
+                    <div class="card-action">
+                        <input name="group1" type="radio" id="test1" />
+                        <label for="test1"><span id="choiceArea1" ></span></label> <br><br>
+
+                        <input name="group1" type="radio" id="test2" />
+                        <label for="test2"><span id="choiceArea2"> </span></label>
+
+
+                        <a class="btn-floating btn-large red btn-question" style="position: absolute; bottom: -20px; right: -20px;">
+                            <i class="send_white"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div style="position: fixed; bottom: 20px; left: 20px;">
+            <a  class="waves-effect waves-light btn-large show-inst">Instructions</a>
+        </div>
+
+        <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
+            <a  class="waves-effect waves-light btn-large btn-question">Start</a>
+        </div>
+    </body>
+</html>
