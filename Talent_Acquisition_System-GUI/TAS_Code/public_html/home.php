@@ -22,8 +22,8 @@ index.html page minus the "welcome" animation.
                 var ht = $(window).height();
                 $('.parallax-container').css('height', $(window).height());
 
-                var root = $('html, body');
 
+                var root = $('html, body');
                 $('#down-button').click(function () {
                     if (ht < $(document).height()) {
                         $(root).animate({
@@ -77,7 +77,7 @@ index.html page minus the "welcome" animation.
 
 
         <!-- Login Registration Form Trigger -->
-        <a style="position:fixed; top:20px; right:20px;" class="modal-trigger waves-effect waves-light btn" href="#LRForm">Members</a>
+        <a style="position:fixed; top:20px; right:20px;" id="members_btn" class="modal-trigger waves-effect waves-light btn" href="#LRForm">Members</a>
 
         <!-- Login Registration Form Start -->
         <div id="LRForm" class="modal">
@@ -176,9 +176,9 @@ index.html page minus the "welcome" animation.
             <div class="parallax-container" id="Test">
                 <div class="parallax"><img src="images/ready.jpg" alt=""/></div>
                 <div class="row container content">
-                    <h2 class="header"><a href="test.html" class="blue-grey-text">Take the MBTI test NOW!</a></h2>
+                    <h2 class="header"><a href="mbti.php" class="blue-grey-text">Take the MBTI test NOW!</a></h2>
                     <p class="white-text">What are you waiting for? Take the test and find your hidden
-                        talents</p>
+                        talents. You need to be logged in to take the test.</p>
                 </div>
             </div>
         </div>

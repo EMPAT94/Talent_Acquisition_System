@@ -8,28 +8,22 @@ and open the template in the editor.
     Author     : Pritesh
 */
 
-i.up_black {
-    content:url(../icons/keyboard_arrow_up_black.svg);
-}
-i.right_black {
-    content:url(../icons/keyboard_arrow_right_black.svg);
-}
-i.down_black {
-    content:url(../icons/keyboard_arrow_down_black.svg);
-}
 i.menu_black {
     content:url(../icons/menu_black.svg);
 }
 i.menu_white {
     content:url(../icons/menu_white.svg);
 }
-i.send_black {
-    content:url(../icons/send_black.svg);
-}
 i.send_white {
     content:url(../icons/send_white_24px.svg);
 }
 
+i.down_white {
+    content:url(../icons/keyboard_arrow_down_white.svg);
+}
+i.up_white {
+    content:url(../icons/keyboard_arrow_up_white.svg);
+}
 i.help_white {
     content:url(../icons/help_white.svg);
 }

@@ -12,17 +12,24 @@
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
         <link rel="shortcut icon" href="favicon.ico">
 
-        <style>
-            body {
-                margin: 0px;
-                padding: 0px;
-                position: relative;
-            }
-        </style>
+        <script>
+            $(document).ready(function () {
 
+                $('img').on('mouseenter', function () {
+                    $('this').animate({zoom: '103%'}, 'fast');
+                });
+
+                $('img').on('mouseleave', function () {
+                    $(this).animate({zoom: '100%'}, 'fast');
+                });
+
+            });
+        </script>
     </head>
+
     <body> 
-        <nav >
+
+        <nav>
             <div class="nav-wrapper  indigo darken-1">
                 <a href="#!" class="brand-logo">Talent Acquisition System</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -30,371 +37,156 @@
                 </a>
             </div>
         </nav>
-    
 
-        <!-- Image Card -->
- <table>
-        <thead>
-          <tr>
-              <th data-field=""></th>
-              <th data-field=""></th>
-              <th data-field=""></th>
-               <th data-field=""></th>
-          </tr>
-        </thead>
-<tbody>
-<tr>
-<td>
- <div class="row">
-        <div class="col s4 m8">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/download (2).jpg" style="width:240px;height:230px;">
-              <span class="card-title">ISTJ</span>
-            </div>
-            <div class="card-content">
-                 <p>
-           Management, Administration Law enforcement, Accounting</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-<td>
-<div class="row">
-<div class="col s4 m10">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/7f08be81dc920c9b47c8b94d89d62847.jpg" style="width:282px;height:250px;">
-              <span class="card-title">ISFJ</span>
-            </div>
-            <div class="card-content">
-                 <p> Education, Health Care, Religious settings</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-<td>
+        <!-- Personality Profiles Start-->
+        <div class="container">
 
-<div class="row">
-<div class="col s6 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/images (1).jpg" style="width:250px;height:250px;">
-              <span class="card-title">INFJ</span>
-            </div>
-            <div class="card-content">
-                 <p>Religion, counseling, teaching, arts</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
+            <!-- First Row -->
+            <div class="row">
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/istj.jpg" >
+                        </div>
+                    </div>
+                </div>
 
-</td>
-<td>
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ISFJ.jpg" >
+                        </div>
+                    </div>
+                </div>
 
-<div class="row">
-<div class="col s10 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/images (3).jpg" style="width:250px;height:250px;">
-              <span class="card-title">INTJ</span>
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/INFJ.jpg" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/INTJ.jpg" >
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-content">
-                 <p>Scientific or technical fields, computers, law</p>
+
+            <!-- Second Row -->
+            <div class="row">
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ISTP.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ISFP.jpg">
+                            <span class="card-title">ISFP</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/INFP.jpg" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/INTP.jpg" >
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-</tr>
 
 
-<tr>
-<td>
+            <!-- Third Row -->
+            <div class="row">
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ESTP.jpg" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ESFP.jpg" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ENFP.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ENTP.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-<div class="row">
-<div class="col s4 m9">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/e0333b58db2be724b684b7e36d34e4f6.jpg" style="width:275px;height:250px;">
-              <span class="card-title">ISTP</span>
-            </div>
-            <div class="card-content">
-                 <p>Skilled trades, technical fields, agriculture, law enforcement, Military</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-<td>
+            <!-- Fourth Row -->
+            <div class="row">
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ESTJ.jpg">
+                        </div>
+                    </div>
+                </div>
 
-<div class="row">
-<div class="col s4 m10">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/a0eee5df25a199f9f54b6c130415b2fc.jpg" style="width:280px;height:250px;">
-              <span class="card-title">ISFP</span>
-            </div>
-            <div class="card-content">
-                 <p>Health care, Business, Law Enforcement</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ESFJ.jpg" >
+                        </div>
+                    </div>
+                </div>
 
-<td>
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ENFJ.jpg">
+                        </div>
+                    </div>
+                </div>
 
-<div class="row">
-<div class="col s4 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/images (5).jpg" style="width:250px;height:250px;">
-              <span class="card-title">INFP</span>
-            </div>
-            <div class="card-content">
-                 <p>Counseling, Writing, Arts</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-
-</td>
-<td>
-<div class="row">
-<div class="col s4 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/images (6).jpg" style="width:250px;height:250px;">
-              <span class="card-title">INTP</span>
-            </div>
-            <div class="card-content">
-                 <p>Scientific or Technical Fields</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-</tr>
-
-
-<tr>
-<td>
-
-<div class="row">
-<div class="col s6 m9">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/a37c77f62ebc0f4eee2a01a1357b716a.jpg" styles " max width:300px;">
-              <span class="card-title">ESTP</span>
-            </div>
-            <div class="card-content">
-                 <p>Marketing, skilled trades, Business, Law enforcement, Applied Technology</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-<td>
-
-
-<div class="row">
-<div class="col s6 m10">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/download (3).jpg" style="width:280px;height:250px;">
-              <span class="card-title">ESFP</span>
-            </div>
-            <div class="card-content">
-                 <p>Health care, Teaching, Coaching, Childcare worker, Skilled Trades</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-<td>
-
-
-<div class="row">
-<div class="col s6 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/download (4).jpg" style="width:250px;height:250px;">
-              <span class="card-title">ENFP</span>
-            </div>
-            <div class="card-content">
-                 <p>Counseling, Teaching, Religion, Arts</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-<td>
-<div class="row">
-<div class="col s6 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/images (4).jpg" style="width:250px;height:250px;">
-              <span class="card-title">ENTP</span>
-            </div>
-            <div class="card-content">
-                 <p>Science, Management, Technology, Arts</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-</tr>
-<tr>
-<td>
-
-
-<div class="row">
-<div class="col s6 m9">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/images (2).jpg" style="width:270px;height:250px;">
-              <span class="card-title">ESTJ</span>
-            </div>
-            <div class="card-content">
-                 <p>Management, Administration, Law Enforcement</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-
-</td>
-<td>
-
-
-<div class="row">
-<div class="col s6 m10">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/ff01f0cd4349aec286fda5a2e87e4cf9.jpg" style="width:280px;height:250px;">
-              <span class="card-title">ESFJ</span>
-            </div>
-            <div class="card-content">
-                 <p>Education,  Health Care, Religion</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-<td>
-
-
-<div class="row">
-<div class="col s4 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/04018f187dc15c42b7066809ea51ef89.jpg" style="width:250px;height:250px;">
-              <span class="card-title">ENFJ</span>
-            </div>
-            <div class="card-content">
-                 <p>Religions, Arts, Teaching</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-
-</td>
-<td>
-
-
-
-
-<div class="row">
-<div class="col s6 m12">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/e1afdc1d7c5f6a6adf3943b5ce7ba3b3.jpg" style="width:250px;height:250px;">
-              <span class="card-title">ENTJ</span>
-            </div>
-            <div class="card-content">
-                 <p>Management, Leadership</p>
-            </div>
-            <div class="card-action">
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-      </div>
-</td>
-</tr>
-
+                <div class="col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/personalities/ENTJ.jpg" >
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Image Card End -->
-</tbody>
-
-</table>
-</head>
+        <!-- Personality Profiles End-->
+    </body>
 </html>
 
 
