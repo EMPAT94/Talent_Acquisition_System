@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is the home page; serving as the central hub for links to rest of the pages. This is a derivative of
-index.html page minus the "welcome" animation.
--->
 <html>
     <head>
         <title>TAS</title>
@@ -19,7 +15,6 @@ index.html page minus the "welcome" animation.
         <script>
             $(document).ready(function () {
 
-                var ht = $(window).height();
                 $('.parallax-container').css('height', $(window).height());
 
 
@@ -69,7 +64,8 @@ index.html page minus the "welcome" animation.
             <li><a href="#About">About the Test</a></li>
             <li><a href="#Instructions">Instructions</a></li>
             <li><a href="#Personality">Personality Types</a></li>
-            <li><a href="#Test">Take Test</a></li>
+            <li><a href="mbti.php">Take Test</a></li>
+            <li><a href="profile.php">Your Profile</a></li>
             <li><a href="#!">Site Help</a></li>
             <li><a href="#!">Developers</a></li>
         </ul>
@@ -184,8 +180,5 @@ index.html page minus the "welcome" animation.
         </div>
         <!-- Parallax Images and Content End-->
 
-        <div  class="btn-floating btn-large red" id="down-button" style="position:fixed;bottom:20px;right:20px">
-            <i class="down_white"></i>
-        </div> 
     </body>
 </html>

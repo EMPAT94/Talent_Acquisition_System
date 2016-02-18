@@ -70,7 +70,7 @@ function post_question() {
 
     $number = $_POST['value'];
 
-    if ($number < 6) {
+    if ($number < 10) {
         $query = 'MATCH (ss:Scene),(cc:Choice) WHERE (ss.qno = cc.qno = {questionNumber}) RETURN ss,cc';
         $parameters = ['questionNumber' => $number];
         $result = $client->sendCypherQuery($query, $parameters)->getRows();

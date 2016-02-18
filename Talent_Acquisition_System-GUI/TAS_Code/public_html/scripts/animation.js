@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+
     $('.parallax').parallax();
     $('.scrollspy').scrollSpy();
     $('.modal-trigger').leanModal();
@@ -16,6 +17,7 @@ $(document).ready(function () {
     var register = $('.register');
     var logreg = $('#logreg');
     var progressBar = $('#progressBar');
+
     $(logreg).click(function () {
         $(login).slideToggle();
         $(register).slideToggle();
@@ -41,7 +43,6 @@ $(document).ready(function () {
                 } else {
                     Materialize.toast(data, '2000');
                 }
-                
                 $(progressBar).removeClass('indeterminate');
             }
         });
