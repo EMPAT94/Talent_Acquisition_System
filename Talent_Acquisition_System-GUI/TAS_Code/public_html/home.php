@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    $flag = true;
+} else {
+    $flag = false;
+}
+?>
 <html>
     <head>
         <title>TAS</title>
@@ -16,8 +24,7 @@
             $(document).ready(function () {
 
                 $('.parallax-container').css('height', $(window).height());
-
-
+                
                 var root = $('html, body');
                 $('#down-button').click(function () {
                     if (ht < $(document).height()) {
@@ -73,8 +80,11 @@
 
 
         <!-- Login Registration Form Trigger -->
-        <a style="position:fixed; top:20px; right:20px;" id="members_btn" class="modal-trigger waves-effect waves-light btn" href="#LRForm">Members</a>
-
+        <?php
+        if ($flag) {    //if flag == true (user is not logged in)
+        echo '<a style = "position:fixed; top:20px; right:20px;" id = "members_btn" class = "modal-trigger waves-effect waves-light btn" href = "#LRForm">Members</a>';
+        } 
+        ?>
         <!-- Login Registration Form Start -->
         <div id="LRForm" class="modal">
             <div class="modal-content">

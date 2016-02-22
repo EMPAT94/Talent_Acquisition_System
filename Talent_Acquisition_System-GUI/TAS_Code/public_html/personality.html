@@ -1,4 +1,4 @@
-﻿<html>
+<html>
     <head>
         <title>TAS</title>
         <meta charset="UTF-8">
@@ -13,32 +13,39 @@
         <link rel="shortcut icon" href="favicon.ico">
 
         <script>
-            $(document).ready(function () {
-
-                $('img').on('mouseenter', function () {
-                    $('this').animate({zoom: '103%'}, 'fast');
-                });
-
-                $('img').on('mouseleave', function () {
-                    $(this).animate({zoom: '100%'}, 'fast');
-                });
-
-            });
+            /*
              function bigImg(x) {
-     x.style.height = "240px";
-    x.style.width = "240px";
-         }
-
-          function normalImg(x) {
-    x.style.height = "220px";
-    x.style.width = "220px";
-           }
-            
+             x.style.boxshadow = 10px 10px 5px #888888;
+             x.style.height = "240px";
+             x.style.width = "240px";
+             }
+             
+             function normalImg(x) {
+             x.style.height = "220px";
+             x.style.width = "220px";
+             } */
         </script>
     </head>
 
     <body> 
+        <style>
+            img:hover  { 
+                border: solid 0px #CCC; 
+                box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5); 
+            }
+            .collapsible-body {
+                padding : 5px;
+            }
+            .collapsible-header {
+                text-align: center;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 2em;
 
+            }
+            .collapsible-header:hover {
+                font-weight: bold;
+            }
+        </style>
         <nav>
             <div class="nav-wrapper  indigo darken-1">
                 <a href="#!" class="brand-logo">Talent Acquisition System</a>
@@ -48,207 +55,230 @@
             </div>
         </nav>
 
-        <!-- Personality Profiles Start-->
-        <div class="container">
 
-            <!-- First Row -->
-            <div class="row">
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                               <a href="images/mbti tools/istj-profile-inspector-duty-fulfiller-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/istj.jpg" >
-                           
-                    </a>
+        <div class ="container">
+
+            <ul class="collapsible  popout" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header teal darken-4 white-text">INxx</div>
+                    <div class="collapsible-body">
+                        <div class="collapsible popout" data-collapsible="accordion">
+
+                            <div class="row">
+
+                                <div class="col s6 m3">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <a href="images/mbti tools/infp-profile-healer-idealist-pdf2.pdf">
+                                                <img   src="images/personalities/INFP.jpg" >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s6 m3">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <a href="images/mbti tools/intp-profile-architect-thinker-pdf2.pdf">
+                                                <img  src="images/personalities/INTP.jpg" >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s6 m3">
+                                    <div class="card">
+                                        <div class="card-image"> 
+                                            <a href="images/mbti tools/infj-profile-counselor-protector-pdf2.pdf">
+                                                <img  src="images/personalities/INFJ.jpg" >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s6 m3">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <a href="images/mbti tools/intj-profile-mastermind-scientist-pdf2.pdf">
+                                                <img   src="images/personalities/INTJ.jpg" >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
-                </div>
+                </li>
+                <li>
+                    <div class="collapsible-header orange lighten-2 black-text">ENxx</div>
+                    <div class="collapsible-body">
+                        <div class="row">
 
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                               <a href="images/mbti tools/isfj-profile-nurturer-protector-pdf2.pdf">
 
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ISFJ.jpg" >
-                             </a>
-                               
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/enfp-profile-champion-inspirer-pdf2.pdf">
+                                            <img   src="images/personalities/ENFP.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/entp-profile-inventor-visionary-pdf2.pdf">
+                                            <img   src="images/personalities/ENTP.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/enfj-profile-teacher-giver-pdf2.pdf">
+                                            <img  src="images/personalities/ENFJ.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/entj-profile-field-marshal-executive-pdf2.pdf">
+                                            <img  src="images/personalities/ENTJ.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </li>
+                <li>
+                    <div class="collapsible-header  purple darken-4 white-text">ISxx</div>
+                    <div class="collapsible-body">
+                        <div class="row">
 
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image"> 
+                            <div class="col s6 m3">                                
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/istj-profile-inspector-duty-fulfiller-pdf2.pdf">
+                                            <img src="images/personalities/istj.jpg" >                           
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                                <a href="images/mbti tools/infj-profile-counselor-protector-pdf2.pdf">
-                             <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/INFJ.jpg" >
-                          </a>
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/isfj-profile-nurturer-protector-pdf2.pdf">
+                                            <img  src="images/personalities/ISFJ.jpg" >
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/istp-profile-crafter-mechanic-pdf2.pdf">
+                                            <img  src="images/personalities/ISTP.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/isfp-profile-composer-artist-pdf2.pdf">
+                                            <img  src="images/personalities/ISFP.jpg">
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>                        
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header  red accent-3 black-text">ESxx</div>
+                    <div class="collapsible-body">
+                        <div class="row">
+
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/estj-profile-supervisor-guardian-pdf2.pdf">
+                                            <img  src="images/personalities/ESTJ.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/esfj-profile-provider-caregiver-pdf2.pdf">
+                                            <img   src="images/personalities/ESFJ.jpg" >
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/estp-profile-promoter-doer-pdf2.pdf">
+                                            <img  src="images/personalities/ESTP.jpg" >
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s6 m3">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="images/mbti tools/esfp-profile-performer-pdf2.pdf">
+                                            <img  src="images/personalities/ESFP.jpg" >
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                             <a href="images/mbti tools/intj-profile-mastermind-scientist-pdf2.pdf">
-                            <img  onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/INTJ.jpg" >
-                       </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Second Row -->
-            <div class="row">
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                            <a href="images/mbti tools/istp-profile-crafter-mechanic-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ISTP.jpg">
-                               </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                                              <a href="images/mbti tools/isfp-profile-composer-artist-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ISFP.jpg">
-                          </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                             
-                                              <a href="images/mbti tools/infp-profile-healer-idealist-pdf2.pdf">
-                            <img  onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/INFP.jpg" >
-                               </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                         
-                             
-                                              <a href="images/mbti tools/intp-profile-architect-thinker-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/INTP.jpg" >
-                                </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Third Row -->
-            <div class="row">
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                           
-                                              <a href="images/mbti tools/estp-profile-promoter-doer-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ESTP.jpg" >
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                           
-                                              <a href="images/mbti tools/esfp-profile-performer-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ESFP.jpg" >
-                              </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                            
-                           
-                                              <a href="images/mbti tools/enfp-profile-champion-inspirer-pdf2.pdf">
-                            <img  onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ENFP.jpg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                        
-                           
-                                              <a href="images/mbti tools/entp-profile-inventor-visionary-pdf2.pdf">
-                            <img  onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ENTP.jpg">
-                              </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Fourth Row -->
-            <div class="row">
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                               
-                                              <a href="images/mbti tools/estj-profile-supervisor-guardian-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ESTJ.jpg">
-                              </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                               
-                                              <a href="images/mbti tools/esfj-profile-provider-caregiver-pdf2.pdf">
-                            <img  onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ESFJ.jpg" >
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                              <a href="images/mbti tools/enfj-profile-teacher-giver-pdf2.pdf">
-                            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ENFJ.jpg">
-                              </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s4 m3">
-                    <div class="card">
-                        <div class="card-image">
-                          
-                           
-                              <a href="images/mbti tools/entj-profile-field-marshal-executive-pdf2.pdf">
-                         
-                                <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/personalities/ENTJ.jpg">
-                             </a>
-                  </div>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
-        <!-- Personality Profiles End-->
-    </body>
+
+
+
+        <div class="row">
+
+
+
+        </div>
+
+
+        <!-- Third Row -->
+
+
+        <!-- Fourth Row -->
+
+    </div>
+    <!-- Personality Profiles End-->
+</body>
 </html>
 
-  
-                     
-                   
+
+
+

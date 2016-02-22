@@ -61,6 +61,8 @@ if (!isset($_SESSION['username'])) {
                             }
                             echo "<br><br>";
                             echo "Result not yet caliberated!";
+                            
+                            unset($_SESSION['PSVal']);
                             ?>
                         </div>
                     </div>
@@ -134,10 +136,11 @@ if (!isset($_SESSION['username'])) {
 
         <!-- Button at the bottom right for Home--> 
         <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-            <a class="waves-effect waves-light btn-large ">Home</a>
+            <a class="waves-effect waves-light btn-large " href="home.php">Home</a>
         </div>
         <!--Button End -->
-
+        
+        
 
     </body>
 </html>

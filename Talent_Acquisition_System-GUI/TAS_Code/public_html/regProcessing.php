@@ -28,14 +28,14 @@ $data = json_decode($op);
 
 function passcheck($pass) {
     $passwordErr = NULL;
-    if (strlen($pass) <= '6') {
-        $passwordErr = "Your Password Must Contain At Least 6 Characters!";
+    if (strlen($pass) <= '5') {
+        $passwordErr = "Your Password Must Contain At Least : <b>6 Characters</b>, 1 Number, 1 Uppercase and 1 Lowercase Charachter!";
     } elseif (!preg_match("#[0-9]+#", $pass)) {
-        $passwordErr = "Your Password Must Contain At Least 1 Number!";
+        $passwordErr = "Your Password Must Contain At Least : 6 Characters,<b> 1 Number</b>, 1 Uppercase and 1 Lowercase Charachter!";
     } elseif (!preg_match("#[A-Z]+#", $pass)) {
-        $passwordErr = "Your Password Must Contain At Least 1 Capital Letter!";
+        $passwordErr = "Your Password Must Contain At Least : 6 Characters, 1 Number, <b>1 Uppercase </b> and 1 Lowercase Charachter!";
     } elseif (!preg_match("#[a-z]+#", $pass)) {
-        $passwordErr = "Your Password Must Contain At Least 1 Lowercase Letter!";
+        $passwordErr = "Your Password Must Contain At Least : 6 Characters, 1 Number, 1 Uppercase  and <b> 1 Lowercase </b> Charachter!";
     }
     return ($passwordErr);
 }

@@ -26,12 +26,14 @@ if (!isset($_SESSION['username'])) {
                 var questionArea = $('#questionArea');
                 var choiceArea1 = $('#choiceArea1');
                 var choiceArea2 = $('#choiceArea2');
+
+                var choiceArea3 = $('#choiceArea3');
+                var choiceArea4 = $('#choiceArea4');
+                var choiceArea5 = $('#choiceArea5');
+
                 var questioncard = $('.questioncard');
-                var test1 = $('#test1');
-                var test2 = $('#test2');
                 var btnquestion = $('.btn-question');
                 var progressBar = $('#testProgressBar');
-
 
                 function rmv() {
                     $(progressBar).removeClass('determinate');
@@ -50,25 +52,25 @@ if (!isset($_SESSION['username'])) {
                     rmv();
                     $.post(
                             "algo.php",
-                            {value: clicks, weight: 0},
+                            {value: clicks, choice: 0},
                             function (data) {
+                                $(progress).css({'width': 0 + "%"});
                                 var data = JSON.parse(data);
                                 $(questionArea).html(data.ss[0].q);
                                 $(choiceArea1).html(data.cc[0].c);
                                 $(choiceArea2).html(data.cc[1].c);
                                 $(questioncard).slideDown();
-                                $(test1).val(data.cc[0].w);
-                                $(test2).val(data.cc[1].w);
                             });
                     clicks += 1;
                 });
 
                 $(btnquestion).on('click', function () {
+                    $(questioncard).slideUp();
                     rmv();
-                    var wt = $("input[name=choice]:checked").val();
+                    choice = $("input[name=choice]:checked").val();
                     $.post(
                             "algo.php",
-                            {value: clicks, weight: wt},
+                            {value: clicks, choice: choice},
                             function (data) {
                                 if (data === "end") {
                                     location.href = 'result.php';
@@ -78,9 +80,26 @@ if (!isset($_SESSION['username'])) {
                                     $(questionArea).html(data.ss[0].q);
                                     $(choiceArea1).html(data.cc[0].c);
                                     $(choiceArea2).html(data.cc[1].c);
+
+                                    if (data.cc[2] != null) {
+                                        $(choiceArea3).removeClass('hidden');
+                                        $(choiceArea3).find('span').html(data.cc[2].c);
+                                    } else {
+                                        $(choiceArea3).slideUp();
+                                    }
+                                    if (data.cc[3] != null) {
+                                        $(choiceArea4).removeClass('hidden');
+                                        $(choiceArea4).find('span').html(data.cc[3].c);
+                                    } else {
+                                        $(choiceArea4).slideUp();
+                                    }
+                                    if (data.cc[4] != null) {
+                                        $(choiceArea5).removeClass('hidden');
+                                        $(choiceArea5).find('span').html(data.cc[4].c);
+                                    } else {
+                                        $(choiceArea5).slideUp();
+                                    }
                                     $(questioncard).slideDown();
-                                    $(test1).val(data.cc[0].w);
-                                    $(test2).val(data.cc[1].w);
                                     add();
                                 }
                             });
@@ -92,7 +111,6 @@ if (!isset($_SESSION['username'])) {
                     $('.instructions').slideToggle();
                 });
             });
-
         </script>
 
 
@@ -101,15 +119,17 @@ if (!isset($_SESSION['username'])) {
                 <div id="testProgressBar" class="determinate"></div>
             </div>
         </div>
+        
+        
         <div class="instructions container">
             <div class="row">
-                <div class="col s12 m6">
+                <div class="col s12 m8">
                     <div class="card blue-grey darken-1">
                         <div class="card-content white-text">
-                            <span class="card-title">Important Instructions : </span>
-                            <p>1. Do not Refresh or Cancel </p>
-                            <p>2. Think and Answer, Cannot go back. </p>
-                            <p>3. This That</p>
+                            <span class="card-title">Important Instructions : </span><br><br>
+                            <p>1. Do not Refresh or Cancel. </p><br>
+                            <p>2. Think and answer; once answered, cannot go back. </p><br>
+                            <p>3. This That</p><br>
                             <p>4. Blah Blah</p>
                         </div>
                     </div>
@@ -126,11 +146,26 @@ if (!isset($_SESSION['username'])) {
                         <div id="questionArea"> </div>
                     </div>
                     <div class="card-action">
-                        <input name="choice" type="radio" id="test1" value="1" checked="checked" />
+                        <input  name="choice" type="radio" id="test1" value="1" checked="checked" />
                         <label for="test1"><span id="choiceArea1" ></span></label> <br><br>
 
-                        <input name="choice" type="radio" id="test2" value="1"/>
-                        <label for="test2"><span id="choiceArea2"> </span></label>
+                        <input  name="choice" type="radio" id="test2" value="2"/>
+                        <label for="test2"><span id="choiceArea2"> </span></label><br><br>
+
+                        <div  id="choiceArea3" class="hidden">
+                            <input  name="choice" type="radio" id="test3" value="3" />
+                            <label for="test3"><span ></span></label> <br><br>
+                        </div>
+
+                        <div id="choiceArea4" class="hidden">
+                            <input  name="choice" type="radio" id="test4" value="4"/>
+                            <label for="test4"><span > </span></label><br><br>
+                        </div>
+
+                        <div id="choiceArea5" class="hidden">
+                            <input  name="choice" type="radio" id="test5" value="5"/>
+                            <label for="test5"><span > </span></label>
+                        </div>
 
                         <a class="btn-floating btn-large red btn-question" style="position: absolute; bottom: -20px; right: -20px;">
                             <i class="send_white"></i>

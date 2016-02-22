@@ -41,7 +41,7 @@ $(document).ready(function () {
                 if (data == '0') {
                     location.href = "profile.php";
                 } else {
-                    Materialize.toast(data, '2000');
+                    Materialize.toast(data, '3000');
                 }
                 $(progressBar).removeClass('indeterminate');
             }
