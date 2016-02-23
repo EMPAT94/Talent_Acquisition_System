@@ -4,6 +4,17 @@ if (!isset($_SESSION['username'])) {
     header("Location: logreg.php");
     exit;
 }
+require_once 'vendor/autoload.php';
+
+use Neoxygen\NeoClient\ClientBuilder;
+
+$usr = "neo4j";
+$pwd = "root";
+
+$client = ClientBuilder::create()
+        ->addConnection('default', 'http', 'localhost', 7474, true, $usr, $pwd)
+        ->setAutoFormatResponse(true)
+        ->build();
 ?>
 <html>
     <head>
@@ -21,54 +32,9 @@ if (!isset($_SESSION['username'])) {
         <!-- Login Registration Form Trigger -->
         <a style="position:fixed; top:20px; right:20px;" id="members_btn" class="waves-effect waves-light btn" href="profile.php">Profile</a>
 
-        <?php /*
-          require_once 'vendor/autoload.php';
-
-          use Neoxygen\NeoClient\ClientBuilder;
-
-          $usr = "neo4j";
-          $pwd = "root";
-
-          $client = ClientBuilder::create()
-          ->addConnection('default', 'http', 'localhost', 7474, true, $usr, $pwd)
-          ->setAutoFormatResponse(true)
-          ->build();
-
-          echo "Your current number is : ";
-          echo $PS;
-         */ ?>
-
         <div class="instructions container">
             <div class="row">
-                <div class="col s12 m6">
-                    <div class="card teal darken-1">
-                        <div class="card-content white-text">
-                            <span class="card-title">Statistics : </span>
-                            <?php
-                            $PS = $_SESSION['PSVal'];
-                            echo "<br><br>";
-                            echo "Sum of Weights :  ";
-                            echo $PS;
-                            echo "<br><br>";
-
-                            echo "Your Trait (Sample) :  ";
-                            if ($PS < 6) {
-                                echo "Introvert";
-                            } else if ($PS > 5 && $PS < 8) {
-                                echo "Ambivert";
-                            } else {
-                                echo "Extrovert";
-                            }
-                            echo "<br><br>";
-                            echo "Result not yet caliberated!";
-                            
-                            unset($_SESSION['PSVal']);
-                            ?>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m6">
+                <div class="col s12 m12">
                     <div class="card teal darken-1">
                         <div class="card-content white-text">
                             <span class="card-title">General Info :</span>
@@ -97,24 +63,36 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card indigo darken-3">
-                        <div class="card-content white-text">
-                            <span class="card-title">Career Options :</span>
-                            <br>1 <br>2 <br>3
-                        </div>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header ">Strengths :</div>
+                    <div class="collapsible-body">
+                        <br>1 <br>2 <br>3
                     </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card indigo darken-3">
-                        <div class="card-content white-text">
-                            <span class="card-title">Personal :</span>
-                            <br>1 <br>2 <br>3
-                        </div>
+                </li>
+
+                <li>
+                    <div class="collapsible-header ">Weaknesses :</div>
+                    <div class="collapsible-body">
+                        <br>1 <br>2 <br>3
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
+
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header ">Potential Problem Areas :</div>
+                    <div class="collapsible-body">
+                        <br>1 <br>2 <br>3
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Solutions :</div>
+                    <div class="collapsible-body">
+                        <br>1 <br>2 <br>3
+                    </div>
+                </li>
+            </ul>
 
             <div class="row">
                 <div class="col s12 m12">
@@ -139,8 +117,8 @@ if (!isset($_SESSION['username'])) {
             <a class="waves-effect waves-light btn-large " href="home.php">Home</a>
         </div>
         <!--Button End -->
-        
-        
+
+
 
     </body>
 </html>

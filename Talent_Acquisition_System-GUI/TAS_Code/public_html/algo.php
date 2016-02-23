@@ -25,8 +25,8 @@ function post_question() {
 
     global $client;
 
-    $number = $_POST['value'];
-    $choice = $_POST['choice'];
+    $number = htmlspecialchars($_POST['value']);
+    $choice = htmlspecialchars($_POST['choice']);
     if ($choice == 1 || $choice == 3 || $choice == 5) {
         $wt = 1;
     } else if ($choice == 2 || $choice == 4) {

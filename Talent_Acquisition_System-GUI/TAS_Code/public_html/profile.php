@@ -22,9 +22,12 @@ if (!isset($_SESSION['username'])) {
 
         <!--Image Card -->
         <div class = "container row">
-            <div class = "col s10 m12">
-                <div class = "card purple accent-3">
+            <div class = "col s12 m6">
+                <div class = "card">
                     <div class = "card-image">
+                        <?php
+                        echo '<img src="images/profile_pics/default_profile.jpg"> </img>';
+                        ?>
                     </div>
                     <div class ="card-title">
                         <?php

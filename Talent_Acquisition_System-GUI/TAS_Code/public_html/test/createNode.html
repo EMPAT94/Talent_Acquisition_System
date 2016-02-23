@@ -5,27 +5,95 @@ Questions and choices.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Add Question and Choices</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../scripts/jquery.js"></script>
+        <script src="../scripts/materialize.js"></script>
+        <link type="text/css" rel="stylesheet" href="../styles/materialize.css" />
+
+        <script src="../scripts/animation.js"></script>
+        <link type="text/css" rel="stylesheet" href="../styles/display.css" />
+        <link rel="shortcut icon" href="favicon.ico">
     </head>
-    <body>	
-		<form action="createChoice.php" method="post">
-            <br>
-			Choice No: <input type="number" name="cno" min="1"/> <br><br><br>
-            Choice : <textarea name="ch" cols="100"></textarea><br><br><br>
-            For Question no : <input type="number" name="qno" min="1"/> <br><br><br>
-            Trait : <input type="TEXT" name="trt" /> <br><br><br>
-            Weight : <input type="number" name="wt" min="1" max="5"/> <br><br><br>
-            <input type="submit" >
-        </form>
-        <form action="createQuestion.php" method="post">
-              <br>
-            Question No : <input type="number" name="qno" min="1"/> <br><br><br>
-            Question : <textarea name="que" cols="100"></textarea><br><br><br>
-            Trait : <input type="TEXT" name="trt" /> <br><br><br>
-            Weight : <input type="number" name="wt" min="1" max="5"/> <br><br><br>
-            <input type="submit" >
-        </form>
+    <body>
+        <script>
+            /* Ajax Connection to server scripts*/
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    cache: false,
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            });
+        </script>
+        <div class ="container">
+            <ul class="collapsible  popout" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header">Question</div>
+                    <div class="container question collapsible-body">
+                        <form action="createQuestion.php" method="post">
+                            Question No : <input type="number" name="qno" min="1" required/> 
+                            Question : <textarea name="que" cols="100" required></textarea>
+                            Trait : <input type="TEXT" name="dich" required/> 
+                            <!--Weight : <input type="number" name="wt" min="1" max="5" required/> -->
+                            <input type="submit" name="Enter_Q" >
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Choice</div>
+                    <div class ="container choice collapsible-body">
+                        <form action="createChoice.php" method="post">
+                            Choice No: <input type="number" name="cno" min="1" required=""/> 
+                            For Question no : <input type="number" name="qno" min="1" required/>
+                            Choice : <textarea name="ch" cols="100" required></textarea>                            
+                            Trait : <input type="text" name="trt" required />
+                            <!--Weight : <input type="number" name="wt" min="1" max="5" required/> -->
+                            <input type="submit" name="Enter_C">
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Result</div>
+                    <div class ="container choice collapsible-body">
+                        <form action="createResult.php" method="post">
+                            <select name = "type" class="browser-default">
+                                <option value="intj" selected>intj</option>
+                                <option value="intp">intp</option>
+                                <option value="infj">infj</option>
+                                <option value="infp">infp</option>
+                                <option value="istj">istj</option>
+                                <option value="istp">istp</option>
+                                <option value="isfj">isfj</option>
+                                <option value="isfp">isfp</option>
+                                <option value="entj">entj</option>
+                                <option value="entp">entp</option>
+                                <option value="enfj">enfj</option>
+                                <option value="enfp">enfp</option>
+                                <option value="estj">estj</option>
+                                <option value="estp">estp</option>
+                                <option value="esfj">esfj</option>
+                                <option value="esfp">esfp</option>
+                            </select>
+                            Summary : <textarea name="sum" cols="100" required></textarea> 
+                            Portraits : <textarea name="por" cols="100" required></textarea> 
+                            Traits : <textarea name="tra" cols="100" required></textarea> 
+                            Strengths : <textarea name="stre" cols="100" required></textarea> 
+                            Weaknesses : <textarea name="wea" cols="100" required></textarea>
+                            Potential Problem Areas : <textarea name="ppa" cols="100" required></textarea> 
+                            Solutions : <textarea name="sol" cols="100" required></textarea>
+                            Rules to live by : <textarea name="rtlb" cols="100" required></textarea>
+                            <input type="submit" name="Enter_C">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
