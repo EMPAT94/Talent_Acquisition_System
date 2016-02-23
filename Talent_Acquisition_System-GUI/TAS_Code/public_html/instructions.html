@@ -1,4 +1,5 @@
-<html>
+
+        <html>
     <head>
         <title>TAS</title>
         <meta charset="UTF-8">
@@ -11,73 +12,98 @@
         <script src="scripts/animation.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
         <link rel="shortcut icon" href="favicon.ico">
-        <style>
-            body {
-                margin: 0px;
-                padding: 0px;
-                position: relative;
-                -webkit-animation: animate 1.5s;
-            }
 
-            @-webkit-keyframes animate {
-                0% {
-                    transform: translate3d(1000px, -1000px, 0px);
-                    animation-timing-function: ease-in;
-                }
-                50% {
-                    transform: translate3d(500px, -500px, 0px);
-                }
-                100% {
-                    transform: translate3d(0px, 0px, 0px);
-                    animation-timing-function: ease-out;
-                }
-            }
+        <script>
+            $(document).ready(function () {
 
-        </style>
+                $('img').on('mouseenter', function () {
+                    $('this').animate({zoom: '103%'}, 'fast');
+                });
 
-    </head>
-    <body> 
-        <nav >
-            <div class="nav-wrapper deep-orange accent-1">
-                <a href="#!" class="brand-logo">Instructions</a>
+                $('img').on('mouseleave', function () {
+                    $(this).animate({zoom: '100%'}, 'fast');
+                });
+
+            });
+
+             $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+        
+        </script>
+	<style type="text/css">
+	   
+	   * { margin: 0; padding: 0; }
+	   p { padding: 10px; }
+	   #left { position: absolute; left: 0; top: 0; width: 50%; }
+	   #right { position: absolute; right: 0; top: 0; width:40%; }
+          .img-circle {
+          border-radius: 90%;
+       }
+ 
+	</style>
+        </head>
+
+
+    <body>
+
+
+<nav>
+            <div class="nav-wrapper  indigo darken-1">
+                <a href="#!" class="brand-logo">Talent Acquisition System</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="menu_white">menu</i>
                 </a>
             </div>
         </nav>
 
-        <!-- Image Card -->
-        <div class="container row">
-            <div class="col s10 m12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/instructions.jpg">
-                    </div>
-
-                    <div class="card-content">
-                        For taking this test, you need to understand the following:-<br>
-                        <ol>
-                            <li>There are no right answers to any of these questions.</li>
-                            <li>Answer the questions quickly, do not over-analyze them.</li>
-                            <li>Some seem worded poorly. Go with what feels best.</li>
-                            <li>Answer the questions as "the way you are", not "the way you'd like to be seen by others"</li>
-                            <li>Do not look at the scoring sheet until you have completed all the questions.</li>
-                        </ol>
-                    </div>                  
-                </div>
-            </div>
-        </div>
-        <!-- Image Card End -->
 
 
-        <!-- Button at the bottom right -->
-        <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-            <a href="home.php" class="waves-effect waves-light btn-large deep-orange accent-1">Home</a>
-        </div>
 
-        <!-- Button at the bottom left for BACK -->
-        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-            <a href="home.php" class="waves-effect waves-light btn-large deep-orange accent-1" id="back">Back</a>
-        </div> 
-    </body>
-</html>
+ <ul class="collapsible  popout " data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">There are no right answers to any of these questions.</div></div>
+          
+         
+      <div class="collapsible-body #ffff00 yellow accent-2"><p>The choices of situation provided here are in the form of what you will do .There is no Yes or no type of answer you have to give.
+           So what you think is right from your point of view has to be done.</p>
+          
+</div>
+    </li>
+    <li>
+      <div class="collapsible-header">Answer the questions quickly, do not over-analyze them. Some seem
+
+worded poorly. Go with what feels best.</div>
+      <div class="collapsible-body #039be5 light-blue darken-1 "><p>when you have to answer then you should do it quick.If you will analyze the situation and try to answer then there are less
+             chnaces that you will get to know your personality very well. There must be some situation where you are not able to understand it .So at that time you should 
+           think much and you have to choose an option which feels you best.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Answer the questions as the way you are not the way you would like to be
+
+seen by others </div>
+      <div class="collapsible-body #76ff03 light-green accent-3"><p>When you have to make an choice to situations you should not think from others point of view. You should think for your own.
+            You should answer the way you things apperar in front of you instead of thinking how i should look in frnot of others.</p></div>
+    </li>
+   <li>
+      <div class="collapsible-header">Do not look at the scoring sheet until you have completed all the questions.</div>
+      <div class="collapsible-body #ff9100 orange accent-3"><p>when you are taking test you should not look at score. Not looking at scoring sheet will definately will help you yo know 
+           persoanlity very well and   will also help to understand , improve on personality</p></div>
+    </li>
+  <li>
+      <div class="collapsible-header">Dont go back while taking test</div>
+      <div class="collapsible-body #18ffff cyan accent-2"><p>while taking test you are not allowed to go back because you will have to start again and the score which you will get also get lost
+       </p></div>
+    </li>
+     <li>
+      <div class="collapsible-header">You can not start test directly</div>
+      <div class="collapsible-body #ff3d00 deep-orange accent-3"><P>For Taking test you should be member of the system because all the data is stored to analyze the personality 
+           and to give you best result as possible.
+       </p></div>
+    </li>
+     
+  </ul> 
+</body>
+</html>        
