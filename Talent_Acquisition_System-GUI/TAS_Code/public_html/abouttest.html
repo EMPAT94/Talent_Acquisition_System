@@ -1,4 +1,5 @@
-<html>
+﻿
+        <html>
     <head>
         <title>TAS</title>
         <meta charset="UTF-8">
@@ -6,97 +7,321 @@
 
         <script src="scripts/jquery.js"></script>
         <script src="scripts/materialize.js"></script>
-        <script src="scripts/jquery-ui.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />
+
         <script src="scripts/animation.js"></script>
-
-
-        <link type="text/css" rel="stylesheet" href="styles/materialize.css" />        
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
-        <link type="text/css" rel="stylesheet" href="styles/jquery-ui.css" />
         <link rel="shortcut icon" href="favicon.ico">
 
-        <style>
-            body {
-                margin: 0px;
-                padding: 0px;
-                position: relative;
-                -webkit-animation: animate 1.5s;
-            }
+        <script>
+            $(document).ready(function () {
 
-            @-webkit-keyframes animate {
-                0% {
-                    transform: translate3d(-2000px, -2000px, 0px);
-                    animation-timing-function: ease-in;
-                }
-                50% {
-                    transform: translate3d(-500px, -500px, 0%);
-                }
-                100% {
-                    transform: translate3d(0px, 0px, 0px);
-                    animation-timing-function: ease-out;
-                }
-            }
+                $('img').on('mouseenter', function () {
+                    $('this').animate({zoom: '103%'}, 'fast');
+                });
 
-        </style>
+                $('img').on('mouseleave', function () {
+                    $(this).animate({zoom: '100%'}, 'fast');
+                });
 
-    </head>
+            });
+        </script>
+	<style type="text/css">
+	   
+	   * { margin: 0; padding: 0; }
+	   p { padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px; }
+	   #left { position: absolute; left: 0; top: 0; width: 50%; }
+	   #right { position: absolute; right: 0; top: 0; width:40%; }
+          .img-circle {
+          border-radius: 90%;
+       }
+   #container { width: 100%; margin: auto; padding: 20px; }
+  .row { height: 230px; margin-bottom: 50px; position: relative; }
+  .row div { height: 110%; }
+  .left {float :left;  width: 70%;}
+   .right { float: right; width:30%;}
+ 	
+	</style>
+        </head>
+
+
     <body>
 
-        <nav >
-            <div class="nav-wrapper yellow lighten-2">
-                <a href="#!" class="brand-logo teal-text">About Test</a>
+
+<nav>
+            <div class="nav-wrapper  indigo darken-1">
+                <a href="#!" class="brand-logo">Talent Acquisition System</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="menu_white">menu</i>
                 </a>
             </div>
         </nav>
 
-        <!-- Image Card -->
-        <div class="container row">
-            <div class="col s20 m20">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/abouttest.jpg">
+ <br></br>
+         <div id="container">
 
-                    </div>
-                    <div class="card-content">
-                        Swiss psychiatrist Carl Jung developed a theory early in the 20th century to describe basic 
-                        individual preferences and explain similarities and differences between people.
+    <div class="row double">
+  <div class="column-2 left">
+       <div class="row">
+        <div class="col s4 m10">
+         <div class="card #ffff00 yellow accent-2">
+          <div class="card-content black-text">
+                <p>Swiss psychiatrist Carl Jung developed a theory early in the 20th century to 
 
-                        <br>
-                        <br>
-                        The Carl Jung stated that <br>
+                 describe basic individual preferences and explain similarities and differences 
 
-                        <span class="quote"><br>"when we are active and we are awake we think for a situation or condition in various 
-                            ways i.e. we find various alternatives for the same. Response differs from person to person. 
-                            When a situation is given the person either think about it internally i.e. by what their mind is thinking 
-                            and the other response could be in externally i.e. how the external conditions are and how the other 
-                            people react can affect the decision. The decisions are nothing but patterns."
-                        </span>
+                   between people.The Carl Jung stated that when we are active and we are awake we think for a 
 
-                        <br>
-                        <br>
-                        The TAS test will tell you about which type of personality you belong to. It will not tell you that you should do this and that. 
-                        It involves client feedback and agreement. It inherits the strength and weakness of each pattern. It does not 
-                        judge you on how you look or whether you are going through any psychological problem it will only judge you on 
-                        what response you are giving to the situation. The output given by this test is accurate.
+                      situation or condition in various ways i.e. we found various alternatives for the same.
+<p>Response differs from person to person. When a situation is given the 
 
-                    </div>                  
-                </div>
+                  person either think about it internally i.e. by what their mind is thinking and the 
+
+               other response could be in externally i.e. how the external conditions are and 
+
+               how the other people react can affect the decision. The decisions are nothing but 
+
+               patterns. 
+            </p>
             </div>
+          </div>
         </div>
-        <!-- Image Card End -->
+      </div>
+       
+            </div>
+</div>
+<br></br>
+  <div class="column-2 right">
+      <div id="right">
+   <br></br>
+<br></br>
+<br></br>
+      <img class = "img-circle" src = "images/what.png" style ="height:280px; width:280px;">
+            
+    </div>
+</div>
+   </div>
+<br></br>
+<br></br>
+
+ <div class="row double">
+  <div class="column-2 left">
+    <div id="left">
+      <img class = "img-circle" src = "images/mbti.jpg" style ="height:280px; width:280px;">
+            
+    </div>
+  </div> 
+<br></br>
 
 
-        <!-- Button at the bottom right --> 
-        <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-            <a href="home.php" class="waves-effect waves-light btn-large yellow lighten-2 teal-text">Home</a>
-        </div>
-        
-        <!-- Button at the bottom left for BACK --> 
-        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-            <a href="home.php" class="waves-effect waves-light btn-large yellow lighten-2 teal-text" id="back">Back</a>
-        </div>
+  <div class="column-2 right">
+<div id="right">
+      <div class="row">
+        <div class="col s12 m12">
+         <div class="card #304ffe indigo accent-4">
+          <div class="card-content black-text">
+              <p>
+                  There are eight different patterns which are found by Carl. This patterns are 
 
-    </body>
+                  combination of opposite pairs of function and attribute.
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+
+
+</div>
+   </div>  
+<br></br>
+
+<br></br>
+<br></br>
+ <div class="row double">
+  <div class="column-2 left">
+  <div id="left">
+      <div class="row">
+        <div class="col s12 m12">
+         <div class="card #e53935 red darken-1">
+          <div class="card-content white-text"
+                <p>Favorite world: Do you prefer to focus on the outer world or on your own inner 
+
+          world? This is called Extraversion (E) or Introversion (I).<br></br>
+
+       Information: Do you prefer to focus on the basic information you take in or do 
+
+          you prefer to interpret and add meaning? This is called Sensing (S) or Intuition (N).<br></br>
+
+   Decisions: When making decisions, do you prefer to first look at logic and 
+
+    consistency or first look at the people and special circumstances? This is called 
+
+  Thinking (T) or Feeling (F). <br></br>
+
+     Structure: In dealing with the outside world, do you prefer to get things decided 
+
+      or do you prefer to stay open to new information and options? This is called 
+
+Judging (J) or Perceiving (P).<br></br>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>           </div>
+</div>
+<br></br>
+<br></br>
+
+  <div class="column-2 right">
+    <div id="right">
+      <img class = "img-circle" src = "images/world.jpg" style ="height:280px; width:280px;">
+            
+    </div>  
+
+</div>
+   </div>  
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div class="row double">
+  <div class="column-2 right">
+  <div id ="right">
+       <div class="row">
+        <div class="col s4 m12">
+         <div class="card #76ff03 light-green accent-3 ">
+          <div class="card-content black-text">
+                <p>Based upon the above preferences there are sixteen personality types which can 
+
+          be formed depending upon your preferences.<br></br>
+
+      ISTJ ISFJ INFJ INTJ <br></br>
+
+      ISTP ISFP INFP INTP <br></br>
+
+      ESTP ESFP ENFP ENTP <br></br>
+
+      ESTJ ESFJ ENFJ ENTJ
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<br></br>
+  <div class="column-2 left">
+      <div id="left">
+      <img class = "img-circle" src = "images/types.png" style ="height:280px; width:280px;">
+            
+    </div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+
+<div class="row double">
+  <div class="column-2 left">
+  <div id="left">
+      <div class="row">
+        <div class="col s12 m11">
+         <div class="card #d500f9 purple accent-3">
+          <div class="card-content white-text"
+                <p>The MBTI tool is an indicator of personality type which gave valid and reliable 
+
+          output. This test will tell you about which type of personality you belong to .It will 
+
+            not tell you that you should do this and that. It involves client feedback and 
+
+       agreement. It inherits the strength and weakness of each pattern. It does not 
+
+        judge you on how you look or whether you are going through any psychological 
+
+    problem it will only judge you on what response you are giving to the situation. 
+
+         The output given by this test is accurate.
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+
+  <div class="column-2 right">
+    <div id="right">
+      <img class = "img-circle" src = "images/tool.jpg" style ="height:280px; width:280px;">
+            
+    </div>  
+
+</div>
+   </div>  
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+
+
+
+<div class="row double">
+  <div class="column-2 right">
+  <div id="right">
+      <div class="row">
+        <div class="col s12 m12">
+         <div class="card blue lighten-3">
+          <div class="card-content black-text"
+                <p> Talent Acquisition System is using the theorey and reserach data Of MBTI.
+                  In this system the test is provided with different situations where user has to make one 
+                    choice which he finds best for him. There is no time limit to take test but its better if you will 
+                        answers as early as possible if you want to know your personality very well.The test will not tell
+                       you about what you should do. The result page is proivided where user gets what kind of personality he or she 
+                     belongs to and also potraits are shown .The output given by this system are correct.The User Interface is easy to 
+                    understand so that you can enjoy your test. All detail Description of Various personalities is provided so that you can know in detail 
+             about your personality and try to improve on your personality.
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+</div>
+<br></br>
+<br></br>
+
+
+  <div class="column-2 left">
+    <div id="left">
+      <img class = "img-circle" src = "images/Brain.png" style ="height:280px; width:280px;">
+            
+    </div>  
+
+</div>
+   </div>  
+
+<br></br>
+<br></br>
+   </div>
+</div>
+</div>
+</body>
 </html>
+
+
