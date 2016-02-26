@@ -11,20 +11,6 @@
         <script src="scripts/animation.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
         <link rel="shortcut icon" href="favicon.ico">
-
-        <script>
-            /*
-             function bigImg(x) {
-             x.style.boxshadow = 10px 10px 5px #888888;
-             x.style.height = "240px";
-             x.style.width = "240px";
-             }
-             
-             function normalImg(x) {
-             x.style.height = "220px";
-             x.style.width = "220px";
-             } */
-        </script>
     </head>
 
     <body> 
@@ -46,29 +32,53 @@
                 font-weight: bold;
             }
         </style>
-        <nav>
-            <div class="nav-wrapper  indigo darken-1">
-                <a href="#!" class="brand-logo">Talent Acquisition System</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse">
-                    <i class="menu_white">menu</i>
-                </a>
+        <!-- Menu bar on top left Start-->
+        <a data-activates="slide-out" class="button-collapse">
+            <i class="menu_black"></i>
+        </a>
+        <ul id="slide-out" class="side-nav fixed hidden">
+            <li><a name="home" href="home.php">Home</a></li>
+            <li><a name="about" href="abouttest.html">About the Test</a></li>
+            <li><a name="instructions" href="instructions.html">Instructions</a></li>
+            <li><a name="personality" class = "disabled" href="personality.html">Personality Types</a></li>
+            <li><a name="mbti" href="mbti.php">Take Test</a></li>
+            <li><a name="profile" href="profile.php">Your Profile</a></li>
+            <li><a name="help" href="help.html">Site Help</a></li>
+            <li><a name="developers" href="developers.html">Developers</a></li>
+        </ul>
+        <!-- Menu bar on top left End-->
+
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col s12 m12'>
+                    <div class='card'>
+                        <div class='card-content'>
+                            <blockquote>
+                            The 16 personality types of the Myers-Briggs Type Indicator
+                            are listed below, please click on any type for extensive information on same.
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
 
 
+        <!-- Personality Profiles Start-->
         <div class ="container">
-
-            <ul class="collapsible  popout" data-collapsible="accordion">
+            <ul class="collapsible" data-collapsible="accordion">
                 <li>
                     <div class="collapsible-header teal darken-4 white-text">INxx</div>
                     <div class="collapsible-body">
                         <div class="collapsible popout" data-collapsible="accordion">
                             <div class="row">
+                                
                                 <div class="col s6 m3">
                                     <div class="card">
                                         <div class="card-image">
                                             <a href="images/mbti tools/infp-profile-healer-idealist-pdf2.pdf">
-                                                <img   src="images/personalities/INFP.jpg" >
+                                                <img  src="images/personalities/INFP.jpg" >
                                             </a>
                                         </div>
                                     </div>
@@ -103,6 +113,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
 
 
@@ -257,24 +269,61 @@
                 </li>
             </ul>
         </div>
+        <!-- Personality Profiles End-->
 
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" style="position:absolute; bottom:20px; right:20px;" href="#moreInfo">More Info</a>
 
-
-        <div class="row">
-
-
-
+        <!-- Modal Structure -->
+        <div id="moreInfo" class="modal  modal-fixed-footer">
+            <div class="modal-content">
+                <div class='card-content'>
+                    <b>Favorite world: </b><br>
+                    Do you prefer to focus on the outer world or on your own inner world? 
+                    This is called Extraversion (E) or Introversion (I).
+                    <br><br>
+                    <b>Information: </b><br>
+                    Do you prefer to focus on the basic information you take in or do you 
+                    prefer to interpret and add meaning? This is called Sensing (S) or Intuition (N).
+                    <br><br>
+                    <b>Decisions: </b><br>
+                    When making decisions, do you prefer to first look at logic and consistency or 
+                    first look at the people and special circumstances? This is called Thinking (T) or Feeling (F).
+                    <br><br>
+                    <b>Structure: </b><br>
+                    In dealing with the outside world, do you prefer to get things decided or do 
+                    you prefer to stay open to new information and options? 
+                    This is called Judging (J) or Perceiving (P).
+                    <br><br>
+                    <b>Your Personality Type: </b><br>
+                    When you decide on your preference in each category, you have your own personality type,
+                    which can be expressed as a code with four letters.
+                    <br><br>
+                    Type is more than just the sum of the four preferences.
+                    The four-letter MBTI type formula is a shorthand way of telling you about the interaction of 
+                    your four mental functions and which ones you prefer to use first. This is called type dynamics, 
+                    and it is an important part of understanding your results. <br> <br> 
+                    Below are some basic facts about type dynamics.
+                    <ul>
+                        <li>1. One preference has the most influence on you. This is called the dominant function.</li>
+                        <li>2. The next strongest preference is called the auxiliary function. 
+                            It is important because it serves to support and balance the dominant.</li>
+                        <li>3. The third strongest is the tertiary function.</li>
+                        <li>4. One preference is the least strong. This is the fourth function, often called the inferior function.</li>
+                        <li>5. There is one preference each person tends to show first to the outside world.</li>
+                        <li>6. The eight function-attitudes are expressed very differently in the inner world and the outer world.</li>
+                        <li>7. The middle two preferences are called the function pair.</li>
+                        <li>8. Over the course of your life, different preferences may emerge and be used more often, as well as more easily. 
+                            This is referred to as type development.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
         </div>
 
-
-        <!-- Third Row -->
-
-
-        <!-- Fourth Row -->
-
-    </div>
-    <!-- Personality Profiles End-->
-</body>
+    </body>
 </html>
 
 

@@ -99,5 +99,11 @@ if (isset($_SESSION['username'])) {
         </div>
         <!-- Login Registration Form End -->
 
+
+        <!-- Button at the bottom left for Back--> 
+        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+            <a class="waves-effect waves-light btn-large " id="back">Back</a>
+        </div>
+        <!--Button End -->
     </body>
 </html>

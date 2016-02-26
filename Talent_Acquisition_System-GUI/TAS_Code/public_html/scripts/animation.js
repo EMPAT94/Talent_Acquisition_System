@@ -4,14 +4,25 @@ $(document).ready(function () {
     $('.parallax').parallax();
     $('.scrollspy').scrollSpy();
     $('.modal-trigger').leanModal();
+    $('.materialboxed').materialbox();
+
+
+    $('.menu_black').click(function () {
+        $('#slide-out').removeClass('hidden');
+    });
+    $('.button-collapse').pushpin();
+
     /* this code enables the side navigation menu function */
     $(".button-collapse").sideNav();
     $('.menu_white').on('click', function () {
         $(this).closest('div').find('.button-collapse').sideNav();
     });
+    
     $('#back').click(function () {
         window.history.go(-1);
     });
+
+
     /* Login Form Animations */
     var login = $('.login');
     var register = $('.register');

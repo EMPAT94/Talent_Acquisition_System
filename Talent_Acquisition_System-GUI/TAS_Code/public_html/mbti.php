@@ -113,14 +113,29 @@ if (!isset($_SESSION['username'])) {
             });
         </script>
 
+        <!-- Menu bar on top left Start-->
+        <a data-activates="slide-out" class="button-collapse">
+            <i class="menu_black"></i>
+        </a>
+        <ul id="slide-out" class="side-nav fixed hidden">
+            <li><a name="home" href="home.php">Home</a></li>
+            <li><a name="about" href="abouttest.html">About the Test</a></li>
+            <li><a name="instructions" href="instructions.html">Instructions</a></li>
+            <li><a name="personality" href="personality.html">Personality Types</a></li>
+            <li><a name="mbti" class = "disabled" href="mbti.php">Take Test</a></li>
+            <li><a name="profile" href="profile.php">Your Profile</a></li>
+            <li><a name="help" href="help.html">Site Help</a></li>
+            <li><a name="developers" href="developers.html">Developers</a></li>
+        </ul>
+        <!-- Menu bar on top left End-->
 
         <div class="container">
             <div class="progress hidden red">
                 <div id="testProgressBar" class="determinate"></div>
             </div>
         </div>
-        
-        
+
+
         <div class="instructions container">
             <div class="row">
                 <div class="col s12 m8">
@@ -129,8 +144,6 @@ if (!isset($_SESSION['username'])) {
                             <span class="card-title">Important Instructions : </span><br><br>
                             <p>1. Do not Refresh or Cancel. </p><br>
                             <p>2. Think and answer; once answered, cannot go back. </p><br>
-                            <p>3. This That</p><br>
-                            <p>4. Blah Blah</p>
                         </div>
                     </div>
                 </div>

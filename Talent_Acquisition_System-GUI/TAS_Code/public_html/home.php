@@ -23,8 +23,10 @@ if (!isset($_SESSION['username'])) {
         <script>
             $(document).ready(function () {
 
+                document.getElementsByName('home').disabled = true;
+
                 $('.parallax-container').css('height', $(window).height());
-                
+
                 var root = $('html, body');
                 $('#down-button').click(function () {
                     if (ht < $(document).height()) {
@@ -36,9 +38,7 @@ if (!isset($_SESSION['username'])) {
                     return false;
                 });
 
-                $('.menu_black').click(function () {
-                    $('#slide-out').removeClass('hidden');
-                });
+                
 
             });
         </script>
@@ -47,12 +47,6 @@ if (!isset($_SESSION['username'])) {
 
     <body>
         <style>
-            a.button-collapse {
-                top:10px;
-                left:20px;
-                position: absolute;
-                z-index: 99;
-            }
             .content{
                 margin-left: 2%;
                 padding: 2%;
@@ -68,13 +62,14 @@ if (!isset($_SESSION['username'])) {
             <i class="menu_black"></i>
         </a>
         <ul id="slide-out" class="side-nav fixed hidden">
-            <li><a href="#About">About the Test</a></li>
-            <li><a href="#Instructions">Instructions</a></li>
-            <li><a href="#Personality">Personality Types</a></li>
-            <li><a href="mbti.php">Take Test</a></li>
-            <li><a href="profile.php">Your Profile</a></li>
-            <li><a href="#!">Site Help</a></li>
-            <li><a href="#!">Developers</a></li>
+            <li><a name="home" class = "disabled" href="home.php">Home</a></li>
+            <li><a name="about" href="abouttest.html">About the Test</a></li>
+            <li><a name="instructions" href="instructions.html">Instructions</a></li>
+            <li><a name="personality" href="personality.html">Personality Types</a></li>
+            <li><a name="mbti" href="mbti.php">Take Test</a></li>
+            <li><a name="profile" href="profile.php">Your Profile</a></li>
+            <li><a name="help" href="help.html">Site Help</a></li>
+            <li><a name="developers" href="developers.html">Developers</a></li>
         </ul>
         <!-- Menu bar on top left End-->
 
@@ -82,8 +77,8 @@ if (!isset($_SESSION['username'])) {
         <!-- Login Registration Form Trigger -->
         <?php
         if ($flag) {    //if flag == true (user is not logged in)
-        echo '<a style = "position:fixed; top:20px; right:20px;" id = "members_btn" class = "modal-trigger waves-effect waves-light btn" href = "#LRForm">Members</a>';
-        } 
+            echo '<a style = "position:fixed; top:20px; right:20px;" id = "members_btn" class = "modal-trigger waves-effect waves-light btn" href = "#LRForm">Members</a>';
+        }
         ?>
         <!-- Login Registration Form Start -->
         <div id="LRForm" class="modal">
