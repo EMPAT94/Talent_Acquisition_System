@@ -1,11 +1,15 @@
 <?php
 session_start();
-session_destroy();
+if (!isset($_SESSION['username'])) {
+    $flag = true;
+} else {
+    $flag = false;
+}
 ?>
 <!--
-The start page of our website. It includes a "welcome" animation along with the
+The start page of our web site. It includes a "welcome" animation along with the
 brain and brain parts with instructions for new user. This page must be visited just
-once for everytime a user logs in, rest of the linking will be handled by home.html
+once for every time a user logs in, rest of the linking will be handled by home.html
 -->
 <html>
     <head>
@@ -140,7 +144,7 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
             </div>
 
             <div class="progress">
-                <div id="progressBar" class=""></div>
+                <div id="progressBar"></div>
             </div>
 
             <div class="modal-footer" >
@@ -148,8 +152,8 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                 <a class="modal-action modal-close waves-effect waves-green btn-flat" style="text-align:left;">Close</a>
             </div>
         </div>
-
         <!-- Login Registration Form End -->
+
 
         <!-- This markup contains images of Brain and Brain Parts -->
         <div class="rest  hidden">
@@ -175,32 +179,43 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                     <a href="#personality_modal"  style="float:right; right:200px;" class="modal-trigger" >
                         <img src="images/blueBrain.png" style="position:absolute;top:200px;left:700px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Check out various profiles here." alt="Personality Profiles">
                     </a>
+
                     <a href="#test_modal"  style="float:right; right:200px;" class="modal-trigger" >
                         <img src="images/medullaBrain.png" style="position:absolute;top:450px;left:450px;" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Start the Test here and now!" alt="Test">
                     </a>
                     <img id="clickBrain2" src="images/clickBrain2.png" style="float:right;">
+                </div>
+            </div>
 
 
-                </div>
 
-                <!-- Button at the bottom right for Login/Registration--> 
-                <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-                    <a class="modal-trigger waves-effect waves-light btn-large" href="#LRForm">Login / SignUp</a>
-                </div>
-                <!--Button End -->
+            <!-- Button at the bottom right for Help--> 
+            <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+                <a class="waves-effect waves-light btn-large green">Help</a>
+            </div>
+            <!--Button End -->
 
-                <!-- Button at the bottom right for Help--> 
-                <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-                    <a class="waves-effect waves-light btn-large ">Help</a>
-                </div>
-                <!--Button End -->
-                
-                <!-- Button at the bottom middle for Home--> 
-                <div class="go-btn" style="position: fixed; bottom: 20px; left: 50%;">
-                    <a class="waves-effect waves-light btn-large " href="home.php">Home</a>
-                </div>
-                <!--Button End -->
-            </div>        
+            <!-- Button at the bottom middle for Home--> 
+            <div class="go-btn" style="position: fixed; bottom: 20px; left: 50%;">
+                <a class="waves-effect waves-light btn-large " href="home.php">Home</a>
+            </div>
+            <!--Button End -->
+
+            <?php
+            if ($flag) {    //if flag == true (user is not logged in)
+                echo '<div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
+                <a class="modal-trigger waves-effect waves-light btn-large indigo" href="#LRForm">Login / SignUp</a>
+            </div>';
+            } else {
+                echo '<div class="chip" style = "position:fixed; top:20px; left:20px;"> <img src="' . $_SESSION['picpath'] . '" alt="Contact Person">' . $_SESSION['username'] . ' </div>';
+                echo '<a style="position:fixed; bottom:20px; right:20px;" class="waves-effect waves-light btn-large red" href="logOut.php">Log Out</a>';
+            }
+            ?>
+            <!-- Button at the bottom right for Login/Registration--> 
+
+            <!--Button End -->
+
+
         </div>
         <!-- End of Brain Section -->    
 
@@ -211,28 +226,35 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                     Swiss psychiatrist Carl Jung developed a theory early in the 20th century to describe basic 
                     individual preferences and explain similarities and differences between people.
                     <br><br>
-                    The TAS test will tell you about which type of personality you belong to. It will not tell you that you should do this and that. 
-                    It involves client feedback and agreement. It inherits the strength and weakness of each pattern. It does not 
-                    judge you on how you look or whether you are going through any psychological problem it will only judge you on 
-                    what response you are giving to the situation. The output given by this test is accurate.
+                    In 1921, Jung published Psychological Types, 
+                    introducing the idea that each person has a psychological type. 
+                    The academic language of the book made it hard to read and so few people 
+                    could understand and use the ideas for practical purposes.
                     <br><br>
-                    <span class="msg">Login to Read More About the Test and it's origin</span>
+                    During World War II, two American women, Isabel Briggs Myers and her mother 
+                    Katharine Cook Briggs, set out to find an easier way for people to use Jung's 
+                    ideas in everyday life. They wanted people to be able to identify their 
+                    psychological types without having to sift through Jung's academic theory.
+                    <div class="modal-footer yellow lighten-2">
+                        <a href="abouttest.php" class="modal-action waves-effect waves-green btn-flat teal-text">About Test</a>
+                    </div>
                 </div>
             </div>
 
             <div id="instructions_modal" class="modal deep-orange accent-1">
                 <div class="modal-content">
 
-                    For taking this test, you need to understand the following:-<br>
-                    <ol>
-                        <li>There are no right answers to any of these questions.</li>
-                        <li>Answer the questions quickly, do not over-analyze them.</li>
-                        <li>Some seem worded poorly. Go with what feels best.</li>
-                        <li>Answer the questions as "the way you are", not "the way you'd like to be seen by others"</li>
-                        <li>Do not look at the scoring sheet until you have completed all the questions.</li>
-                    </ol>
+                    Instructions are an important aspect to the any setting. 
+                    If one is having trouble following directions, they should try to examine 
+                    why this is happening. The reason could be an underlying problem, like a disinterest 
+                    in the subject matter, or it may very well be the
+                    instructions that are confusing and hard to understand.
                     <br><br>
-                    <span class="msg">Login to Read More Instructions and Guidelines</span>
+                    Following instructions is very necessary in case of our MBTI test, as the results are
+                    hinged on user being able to correctly understand, answer and examine all aspects of our system.
+                    <div class="modal-footer deep-orange accent-1">
+                        <a href="instructions.php" class="modal-action waves-effect waves-green btn-flat blue-text">Instructions</a>
+                    </div>
                 </div>
             </div>
 
@@ -241,25 +263,35 @@ once for everytime a user logs in, rest of the linking will be handled by home.h
                     "It is up to each person to recognize his or her true preferences."
                     <br><br>
                     -Isabel Briggs Myers
-
-                    <br><br>
-                    <span class="msg">Login to Read More</span>
+                    <br><br><br><br>
+                    The 16 personality types of the Myers-Briggs Type Indicator
+                    are listed on this page (click 'personalities' button below), follow on page guide to get extensive information on
+                    any personality type.
+                    <div class="modal-footer indigo darken-1">
+                        <a href="instructions.php" class="modal-action waves-effect waves-green btn-flat grey-text text-lighten-2">Personalities</a>
+                    </div>
                 </div>
             </div>
 
             <div id="test_modal" class="modal blue-grey">
                 <div class="modal-content white-text">
-
-                    You need to be registered to take the test. Please login or Register.
+                    <?php
+                    if ($flag) {
+                        echo 'You need to be registered to take the test. Please login or Register using the button on bottom right.
                     <br><br>
                     We bind the results of your test with your profile. As time passes, people change
                     and so do the results of this test. The minimum time after which changes have been noted
                     is 4 weeks. To have this historical data at your fingertips showing your evolutions as a person
-                    is very significant indeed. Thus, our insistence on registration.
+                    is very significant indeed. Thus, our insistence on registration.';
+                    } else {
+                        echo "Ready to start testing? <a href='mbti.php' class='btn-flat red-text'><b>Click Here</b></a>";
+                    }
+                    ?>
                 </div>
             </div>
+
         </div>
-        <!-- Modals corresponding to brain parts End -->
+
 
 
     </body>

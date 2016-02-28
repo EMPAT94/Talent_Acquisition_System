@@ -24,9 +24,9 @@ if (!isset($_SESSION['username'])) {
                 var prog = 5;
                 var progress = $('.progress');
                 var questionArea = $('#questionArea');
+
                 var choiceArea1 = $('#choiceArea1');
                 var choiceArea2 = $('#choiceArea2');
-
                 var choiceArea3 = $('#choiceArea3');
                 var choiceArea4 = $('#choiceArea4');
                 var choiceArea5 = $('#choiceArea5');
@@ -56,9 +56,21 @@ if (!isset($_SESSION['username'])) {
                             function (data) {
                                 $(progress).css({'width': 0 + "%"});
                                 var data = JSON.parse(data);
-                                $(questionArea).html(data.ss[0].q);
-                                $(choiceArea1).html(data.cc[0].c);
-                                $(choiceArea2).html(data.cc[1].c);
+                                $(questionArea).php(data.ss[0].q);
+                                $(choiceArea1).php(data.cc[0].c);
+                                $(choiceArea2).php(data.cc[1].c);
+                                if (data.cc[2] != null) {
+                                    $(choiceArea3).removeClass('hidden');
+                                    $(choiceArea3).find('span').php(data.cc[2].c);
+                                }
+                                if (data.cc[3] != null) {
+                                    $(choiceArea4).removeClass('hidden');
+                                    $(choiceArea4).find('span').php(data.cc[3].c);
+                                }
+                                if (data.cc[4] != null) {
+                                    $(choiceArea5).removeClass('hidden');
+                                    $(choiceArea5).find('span').php(data.cc[4].c);
+                                }
                                 $(questioncard).slideDown();
                             });
                     clicks += 1;
@@ -77,25 +89,25 @@ if (!isset($_SESSION['username'])) {
                                 } else {
                                     $(progress).css({'width': prog + "%"});
                                     var data = JSON.parse(data);
-                                    $(questionArea).html(data.ss[0].q);
-                                    $(choiceArea1).html(data.cc[0].c);
-                                    $(choiceArea2).html(data.cc[1].c);
+                                    $(questionArea).php(data.ss[0].q);
+                                    $(choiceArea1).php(data.cc[0].c);
+                                    $(choiceArea2).php(data.cc[1].c);
 
                                     if (data.cc[2] != null) {
                                         $(choiceArea3).removeClass('hidden');
-                                        $(choiceArea3).find('span').html(data.cc[2].c);
+                                        $(choiceArea3).find('span').php(data.cc[2].c);
                                     } else {
                                         $(choiceArea3).slideUp();
                                     }
                                     if (data.cc[3] != null) {
                                         $(choiceArea4).removeClass('hidden');
-                                        $(choiceArea4).find('span').html(data.cc[3].c);
+                                        $(choiceArea4).find('span').php(data.cc[3].c);
                                     } else {
                                         $(choiceArea4).slideUp();
                                     }
                                     if (data.cc[4] != null) {
                                         $(choiceArea5).removeClass('hidden');
-                                        $(choiceArea5).find('span').html(data.cc[4].c);
+                                        $(choiceArea5).find('span').php(data.cc[4].c);
                                     } else {
                                         $(choiceArea5).slideUp();
                                     }
@@ -119,13 +131,14 @@ if (!isset($_SESSION['username'])) {
         </a>
         <ul id="slide-out" class="side-nav fixed hidden">
             <li><a name="home" href="home.php">Home</a></li>
-            <li><a name="about" href="abouttest.html">About the Test</a></li>
-            <li><a name="instructions" href="instructions.html">Instructions</a></li>
-            <li><a name="personality" href="personality.html">Personality Types</a></li>
-            <li><a name="mbti" class = "disabled" href="mbti.php">Take Test</a></li>
+            <li><a name="about" href="abouttest.php">About the Test</a></li>
+            <li><a name="instructions" href="instructions.php">Instructions</a></li>
+            <li><a name="personality" href="personality.php">Personality Types</a></li>
+            <!--<li><a name="mbti" class = "disabled">Take Test</a></li>-->
             <li><a name="profile" href="profile.php">Your Profile</a></li>
-            <li><a name="help" href="help.html">Site Help</a></li>
-            <li><a name="developers" href="developers.html">Developers</a></li>
+            <li><a name="help" href="help.php">Site Help</a></li>
+            <li><a name="developers" href="developers.php">Developers</a></li>
+            <li><a name="logout" href="logOut.php">Log Out</a></li>
         </ul>
         <!-- Menu bar on top left End-->
 

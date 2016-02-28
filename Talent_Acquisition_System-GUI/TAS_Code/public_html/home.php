@@ -38,7 +38,7 @@ if (!isset($_SESSION['username'])) {
                     return false;
                 });
 
-                
+
 
             });
         </script>
@@ -62,14 +62,19 @@ if (!isset($_SESSION['username'])) {
             <i class="menu_black"></i>
         </a>
         <ul id="slide-out" class="side-nav fixed hidden">
-            <li><a name="home" class = "disabled" href="home.php">Home</a></li>
-            <li><a name="about" href="abouttest.html">About the Test</a></li>
-            <li><a name="instructions" href="instructions.html">Instructions</a></li>
-            <li><a name="personality" href="personality.html">Personality Types</a></li>
+            <!--<li><a name="home" class = "disabled">Home</a></li>-->
+            <li><a name="about" href="abouttest.php">About the Test</a></li>
+            <li><a name="instructions" href="instructions.php">Instructions</a></li>
+            <li><a name="personality" href="personality.php">Personality Types</a></li>
             <li><a name="mbti" href="mbti.php">Take Test</a></li>
             <li><a name="profile" href="profile.php">Your Profile</a></li>
-            <li><a name="help" href="help.html">Site Help</a></li>
-            <li><a name="developers" href="developers.html">Developers</a></li>
+            <li><a name="help" href="help.php">Site Help</a></li>
+            <li><a name="developers" href="developers.php">Developers</a></li>
+            <?php
+            if (!$flag) {
+                echo '<li><a name="logout" href="logOut.php">Log Out</a></li>';
+            }
+            ?>
         </ul>
         <!-- Menu bar on top left End-->
 
@@ -77,7 +82,9 @@ if (!isset($_SESSION['username'])) {
         <!-- Login Registration Form Trigger -->
         <?php
         if ($flag) {    //if flag == true (user is not logged in)
-            echo '<a style = "position:fixed; top:20px; right:20px;" id = "members_btn" class = "modal-trigger waves-effect waves-light btn" href = "#LRForm">Members</a>';
+            echo '<a style = "position:fixed; top:20px; right:20px;" id = "members_btn" class =  "modal-trigger waves-effect waves-light btn" href = "#LRForm">Members</a>';
+        } else {
+            echo '  <div class="chip" style = "position:fixed; top:20px; right:20px;"> <img src="' . $_SESSION['picpath'] . '" alt="Contact Person">' . $_SESSION['username'] . ' </div>';
         }
         ?>
         <!-- Login Registration Form Start -->

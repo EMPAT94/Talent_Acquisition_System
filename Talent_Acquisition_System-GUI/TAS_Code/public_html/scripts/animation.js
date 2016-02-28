@@ -17,11 +17,14 @@ $(document).ready(function () {
     $('.menu_white').on('click', function () {
         $(this).closest('div').find('.button-collapse').sideNav();
     });
-    
+
     $('#back').click(function () {
         window.history.go(-1);
     });
 
+    $('#back').click(function () {
+        location.href('logOut.php');
+    });
 
     /* Login Form Animations */
     var login = $('.login');
@@ -47,7 +50,10 @@ $(document).ready(function () {
             type: "POST",
             cache: false,
             url: $(this).attr('action'),
-            data: $(this).serialize(),
+            //data: $(this).serialize(),
+            data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+            contentType: false, // The content type used when sending data to the server.
+            processData: false, // To send DOMDocument or non processed data file it is set to false
             success: function (data) {
                 if (data == '0') {
                     location.href = "profile.php";
