@@ -56,20 +56,26 @@ if (!isset($_SESSION['username'])) {
                             function (data) {
                                 $(progress).css({'width': 0 + "%"});
                                 var data = JSON.parse(data);
-                                $(questionArea).php(data.ss[0].q);
-                                $(choiceArea1).php(data.cc[0].c);
-                                $(choiceArea2).php(data.cc[1].c);
+                                $(questionArea).html(data.ss[0].q);
+                                $(choiceArea1).html(data.cc[0].c);
+                                $(choiceArea2).html(data.cc[1].c);
                                 if (data.cc[2] != null) {
-                                    $(choiceArea3).removeClass('hidden');
-                                    $(choiceArea3).find('span').php(data.cc[2].c);
+                                    $(choiceArea3).fadeIn();
+                                    $(choiceArea3).find('span').html(data.cc[2].c);
+                                } else {
+                                    $(choiceArea3).slideUp();
                                 }
                                 if (data.cc[3] != null) {
-                                    $(choiceArea4).removeClass('hidden');
-                                    $(choiceArea4).find('span').php(data.cc[3].c);
+                                    $(choiceArea4).fadeIn();
+                                    $(choiceArea4).find('span').html(data.cc[3].c);
+                                } else {
+                                    $(choiceArea4).slideUp();
                                 }
                                 if (data.cc[4] != null) {
-                                    $(choiceArea5).removeClass('hidden');
-                                    $(choiceArea5).find('span').php(data.cc[4].c);
+                                    $(choiceArea5).fadeIn();
+                                    $(choiceArea5).find('span').html(data.cc[4].c);
+                                } else {
+                                    $(choiceArea5).slideUp();
                                 }
                                 $(questioncard).slideDown();
                             });
@@ -89,25 +95,25 @@ if (!isset($_SESSION['username'])) {
                                 } else {
                                     $(progress).css({'width': prog + "%"});
                                     var data = JSON.parse(data);
-                                    $(questionArea).php(data.ss[0].q);
-                                    $(choiceArea1).php(data.cc[0].c);
-                                    $(choiceArea2).php(data.cc[1].c);
+                                    $(questionArea).html(data.ss[0].q);
+                                    $(choiceArea1).html(data.cc[0].c);
+                                    $(choiceArea2).html(data.cc[1].c);
 
                                     if (data.cc[2] != null) {
-                                        $(choiceArea3).removeClass('hidden');
-                                        $(choiceArea3).find('span').php(data.cc[2].c);
+                                        $(choiceArea3).fadeIn();
+                                        $(choiceArea3).find('span').html(data.cc[2].c);
                                     } else {
                                         $(choiceArea3).slideUp();
                                     }
                                     if (data.cc[3] != null) {
-                                        $(choiceArea4).removeClass('hidden');
-                                        $(choiceArea4).find('span').php(data.cc[3].c);
+                                        $(choiceArea4).fadeIn();
+                                        $(choiceArea4).find('span').html(data.cc[3].c);
                                     } else {
                                         $(choiceArea4).slideUp();
                                     }
                                     if (data.cc[4] != null) {
-                                        $(choiceArea5).removeClass('hidden');
-                                        $(choiceArea5).find('span').php(data.cc[4].c);
+                                        $(choiceArea5).fadeIn();
+                                        $(choiceArea5).find('span').html(data.cc[4].c);
                                     } else {
                                         $(choiceArea5).slideUp();
                                     }
@@ -178,17 +184,17 @@ if (!isset($_SESSION['username'])) {
                         <input  name="choice" type="radio" id="test2" value="2"/>
                         <label for="test2"><span id="choiceArea2"> </span></label><br><br>
 
-                        <div  id="choiceArea3" class="hidden">
+                        <div  id="choiceArea3" >
                             <input  name="choice" type="radio" id="test3" value="3" />
                             <label for="test3"><span ></span></label> <br><br>
                         </div>
 
-                        <div id="choiceArea4" class="hidden">
+                        <div id="choiceArea4" >
                             <input  name="choice" type="radio" id="test4" value="4"/>
                             <label for="test4"><span > </span></label><br><br>
                         </div>
 
-                        <div id="choiceArea5" class="hidden">
+                        <div id="choiceArea5">
                             <input  name="choice" type="radio" id="test5" value="5"/>
                             <label for="test5"><span > </span></label>
                         </div>

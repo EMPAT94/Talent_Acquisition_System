@@ -22,7 +22,7 @@ if (isset($_POST['gender'])) {
 
     $query = 'MATCH (n:User) WHERE n.fname = {fname} SET n.age = {age}, n.gender = {gender}, n.country = {country}';
     $parameters = ['fname' => $_SESSION['username'], 'age' => $age, 'gender' => $gender, 'country' => $country];
-    //$result = $client->sendCypherQuery($query, $parameters);
+    $result = $client->sendCypherQuery($query, $parameters);
 
     echo "Data Successfully Added, Reload Page.";
 }

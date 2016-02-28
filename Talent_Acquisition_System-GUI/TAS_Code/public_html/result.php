@@ -19,7 +19,8 @@ $client = ClientBuilder::create()
         ->setAutoFormatResponse(true)
         ->build();
 
-$type = "infp";
+$type = $_SESSION['Type'];
+$typestr = $_SESSION['TypeStr'];
 
 $query = 'MATCH (tt:Type) WHERE (tt.ty = {type}) RETURN tt';
 $parameters = ['type' => $type];
@@ -60,6 +61,11 @@ if ($op == null) {
 
     </head>
     <body>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
 
         <!-- Menu bar on top left Start-->
         <a data-activates="slide-out" class="button-collapse">
@@ -75,7 +81,7 @@ if ($op == null) {
             <li><a name="help" href="help.php">Site Help</a></li>
             <li><a name="developers" href="developers.php">Developers</a></li>
             <li><a name="logout" href="logOut.php">Log Out</a></li>
-     
+
         </ul>
         <!-- Menu bar on top left End-->
 
@@ -87,12 +93,14 @@ if ($op == null) {
                 <div class="col s12 m12">
                     <div class="card teal darken-1">
                         <div class="card-content white-text">
-                            <span class="card-title">General Info :</span>
+                            <span class="card-title">
+                                <?php echo "<h3>Your Personality Type : <b> " . strtoupper($type) . "</b></h3>"; ?>
+                            </span>
                             <?php
-                            echo "Your Personality Type : <b> " . strtoupper($type) . "</b>";
-                            echo '<br><br>';
+                            echo $typestr;
+                            echo "<br><h5><b>General Info : </b></h5>";
                             foreach ($summary as $value) {
-                                echo "<br> $value";
+                                echo "<br> $value <br>";
                             }
                             ?>
                         </div>
@@ -100,32 +108,34 @@ if ($op == null) {
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <span class="card-title">Portraits :</span>
-                            <?php
-                            foreach ($portraits as $value) {
-                                echo "<br> $value";
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
+            <div class="row" >
+                <div class="col s12 m8">
                     <div class="card blue-grey darken-1">
                         <div class="card-content white-text">
                             <span class="card-title">Traits :</span>
 
                             <?php
                             foreach ($traits as $value) {
-                                echo "<br> $value";
+                                echo "<br> $value <br>";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div><div class="col s12 m4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Profession Portraits :</span>
+                            <br><br>
+                            <?php
+                            foreach ($portraits as $value) {
+                                echo "$value";
+                                echo '<img class="materialboxed" data-caption="' . $value . '" style="width : 100%; border: 3px solid white;"  src="images/portraits/' . $value . '.jpg"><br><br>';
                             }
                             ?>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <ul class="collapsible" data-collapsible="expandable">
@@ -133,11 +143,11 @@ if ($op == null) {
                     <div class="collapsible-header ">Strengths :</div>
                     <div class="collapsible-body">
                         <p>
-                            <?php
-                            foreach ($strengths as $value) {
-                                echo "<br> $value";
-                            }
-                            ?>
+<?php
+foreach ($strengths as $value) {
+    echo "<br> $value <br>";
+}
+?>
                         </p>
                     </div>
                 </li>
@@ -146,11 +156,11 @@ if ($op == null) {
                     <div class="collapsible-header ">Weaknesses :</div>
                     <div class="collapsible-body">
                         <p>
-                            <?php
-                            foreach ($weaknesses as $value) {
-                                echo "<br> $value";
-                            }
-                            ?>
+<?php
+foreach ($weaknesses as $value) {
+    echo "<br> $value <br>";
+}
+?>
                         </p>
                     </div>
                 </li>
@@ -161,11 +171,11 @@ if ($op == null) {
                     <div class="collapsible-header ">Potential Problem Areas :</div>
                     <div class="collapsible-body">
                         <p>
-                            <?php
-                            foreach ($ppa as $value) {
-                                echo "<br> $value";
-                            }
-                            ?>
+<?php
+foreach ($ppa as $value) {
+    echo "<br> $value <br>";
+}
+?>
                         </p>
                     </div>
                 </li>
@@ -173,11 +183,11 @@ if ($op == null) {
                     <div class="collapsible-header">Solutions :</div>
                     <div class="collapsible-body">
                         <p>
-                            <?php
-                            foreach ($solutions as $value) {
-                                echo "<br> $value";
-                            }
-                            ?>
+<?php
+foreach ($solutions as $value) {
+    echo "<br> $value <br>";
+}
+?>
                         </p>
                     </div>
                 </li>
@@ -189,11 +199,11 @@ if ($op == null) {
                         <div class="card-content white-text">
                             <span class="card-title">Rules to Live by:</span>
                             <p>
-                                <?php
-                                foreach ($rtlb as $value) {
-                                    echo "<br> $value";
-                                }
-                                ?>
+<?php
+foreach ($rtlb as $value) {
+    echo "<br> $value <br>";
+}
+?>
                             </p>
                         </div>
                     </div>
@@ -201,9 +211,19 @@ if ($op == null) {
             </div>
         </div>
 
+        <!-- Modal Structure -->
+        <div id="moreInfo" class="modal">
+            <div class="modal-content">
+
+            </div>
+            <div class="modal-footer">
+                <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
         <!-- Button at the bottom right for Personality--> 
         <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-            <a class="waves-effect waves-light btn-large" href="personality.php">More Info</a>
+            <a class="waves-effect waves-light btn-large indigo" href="personality.php">More Info</a>
         </div>
         <!--Button End -->
 
