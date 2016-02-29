@@ -4,7 +4,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: logreg.php");
     exit;
 }
-
+$_SESSION['flag'] = "0";
 $_SESSION['picpath'] = "images/profile_pics/$_SESSION[username].jpg";
 if (!file_exists($_SESSION['picpath'])) {
     $_SESSION['picpath'] = "images/profile_pics/default_profile.jpg";
@@ -20,16 +20,27 @@ $client = ClientBuilder::create()
         ->setAutoFormatResponse(true)
         ->build();
 
-$query = "Match (u:User) Where u.fname = {username} Return u";
-$parameters = ['username' => $_SESSION['username']];
+
+$query = "Match (u:User)-[r]->(t:Type) Where u.email = {userid} Return *";
+$parameters = ['userid' => $_SESSION['userid']];
 $result = $client->sendCypherQuery($query, $parameters)->getRows();
 
 $op = json_encode($result);
 $data = json_decode($op);
 
+if ($data == null) {
+    $query = "Match (u:User) Where u.email = {userid} Return *";
+    $parameters = ['userid' => $_SESSION['userid']];
+    $result = $client->sendCypherQuery($query, $parameters)->getRows();
+
+    $op = json_encode($result);
+    $data = json_decode($op);
+}
+
 $fname = $data->u[0]->fname;
 $lname = $data->u[0]->lname;
 $userid = $data->u[0]->email;
+
 $age = "Not Added";
 $gender = "Not Added";
 $country = "Not Added";
@@ -54,8 +65,10 @@ if (isset($data->u[0]->country)) {
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
         <link rel="shortcut icon" href="favicon.ico">
 
+
     </head>
     <body>
+
         <!-- Menu bar on top left Start-->
         <a data-activates="slide-out" class="button-collapse">
             <i class="menu_black"></i>
@@ -81,19 +94,25 @@ if (isset($data->u[0]->country)) {
         <div class = "container">
             <div class='row'>
                 <div class = "col s12 m6">
-                    <div class="card">
+                    <div class="card large">
+
                         <div class="card-image waves-effect waves-block waves-light">
                             <?php
-                            echo '<img class="activator" src="' . $_SESSION['picpath'] . '"> </img>';
+                            echo '<img class="activator"  style="" src="' . $_SESSION['picpath'] . '"> </img>';
                             ?>
                         </div>
                         <div class="card-content">
                             <span class="card-title grey-text text-darken-4">
                                 <?php
-                                echo " Welcome <a class='activator' style='cursor:pointer;'>$_SESSION[username]</a>";
+                                echo " Welcome <a class='activator' style='cursor:pointer;'>$fname $lname</a>";
                                 ?>
                             </span>
+                            <br><br>
+                            <p>
+                                Click on your name or profile pic to view/add more information about yourself.
+                            </p>
                         </div>
+
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4"> 
                                 Details - 
@@ -119,15 +138,39 @@ if (isset($data->u[0]->country)) {
                                 Change Pic
                             </a>
                         </div>
+
                     </div>
                 </div>
                 <div class = "col s12 m6">
                     <div class = "card">
                         <div class = "card-content">
                             <div class ="card-title">
-                                Previous Results : 
+                                Previous Results :
+                                <br>
                             </div>
-                            Previous Results Will Come Here
+                            <?php
+                            if (isset($data->t[0])) {
+                                $_SESSION['Type'] = $data->t[0]->ty;
+                                $_SESSION['TypeStr'] = $data->r[0]->str;
+                                echo '<a href = "result.php"> Check Last Result</a>';
+                            } else {
+                                
+                            }
+                            ?>
+                            <hr>
+                            <?php
+                            for ($i = 0; $i <= 16; $i++) {
+
+                                if (isset($data->t[$i])) {
+                                    echo ' ' . $i + 1 . '. <b>';
+                                    $t = strtoupper($data->t[$i]->ty);
+
+                                    echo "$t</b><br><p>";
+                                    print_r($data->r[$i]->str);
+                                    echo "</p><hr>";
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -171,7 +214,7 @@ if (isset($data->u[0]->country)) {
         <div id="addPic" class="modal ">
             <div class="modal-content">
                 <form action="profileProcessing.php" method="post" enctype="multipart/form-data">
-                    <label>Select Your Image : </label>
+                    <label>Select Your Profile Image : </label>
                     <input type="file" name="file" required />
                     <input type="submit" />
                 </form>
@@ -183,16 +226,6 @@ if (isset($data->u[0]->country)) {
                     <li>Max size 2 MB</li>
                     <li>Only One image can be uploaded at a time</li>
                 </ul>
-                <!--
-                <form action = "profileProcessing.php" method = "POST" enctype = "multipart/form-data">
-                    <label> Add a Profile Picture : </label>
-                    <input type = "file" name = "image" />
-                    <input type ="submit" />
-
-                    <div class="progress">
-                        <div id="progressBar"></div>
-                    </div>
-                </form> -->
             </div>
         </div>
 

@@ -4,6 +4,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: logreg.php");
     exit;
 }
+$_SESSION['flag'] = "1";
 ?>
 <html>
     <head>
@@ -45,6 +46,7 @@ if (!isset($_SESSION['username'])) {
                 }
 
                 $('.startTest').on('click', function () {
+                    $('#back').addClass('hidden');
                     $('.instructions').slideUp();
                     $('.show-inst').removeClass('hidden');
                     $('.go-btn').addClass('hidden');
@@ -56,7 +58,7 @@ if (!isset($_SESSION['username'])) {
                             function (data) {
                                 $(progress).css({'width': 0 + "%"});
                                 var data = JSON.parse(data);
-                                $(questionArea).html(data.ss[0].q);
+                                $(questionArea).html(data.ss[0].qno + '. ' + data.ss[0].q);
                                 $(choiceArea1).html(data.cc[0].c);
                                 $(choiceArea2).html(data.cc[1].c);
                                 if (data.cc[2] != null) {
@@ -95,7 +97,7 @@ if (!isset($_SESSION['username'])) {
                                 } else {
                                     $(progress).css({'width': prog + "%"});
                                     var data = JSON.parse(data);
-                                    $(questionArea).html(data.ss[0].q);
+                                    $(questionArea).html(data.ss[0].qno + '. ' + data.ss[0].q);
                                     $(choiceArea1).html(data.cc[0].c);
                                     $(choiceArea2).html(data.cc[1].c);
 
@@ -153,8 +155,9 @@ if (!isset($_SESSION['username'])) {
                 <div id="testProgressBar" class="determinate"></div>
             </div>
         </div>
-
-
+        <?php
+        echo '  <div class="chip" style = "position:fixed; top:20px; right:20px;"> <img src="' . $_SESSION['picpath'] . '" alt="Contact Person">' . $_SESSION['username'] . ' </div>';
+        ?>
         <div class="instructions container">
             <div class="row">
                 <div class="col s12 m8">
@@ -163,6 +166,8 @@ if (!isset($_SESSION['username'])) {
                             <span class="card-title">Important Instructions : </span><br><br>
                             <p>1. Do not Refresh or Cancel. </p><br>
                             <p>2. Think and answer; once answered, cannot go back. </p><br>
+                            <p>3. There are 20 Questions in total; result is produced only when
+                                all 20 are answered. </p>
                         </div>
                     </div>
                 </div>
@@ -214,7 +219,14 @@ if (!isset($_SESSION['username'])) {
         </div>
 
         <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
-            <a  class="waves-effect waves-light btn-large startTest">Start</a>
+            <a  class="waves-effect waves-light btn-large startTest indigo">Start</a>
         </div>
+
+
+        <!-- Button at the bottom left for Back--> 
+        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+            <a class="waves-effect waves-light btn-large red" id="back">Back</a>
+        </div>
+        <!--Button End -->
     </body>
 </html>

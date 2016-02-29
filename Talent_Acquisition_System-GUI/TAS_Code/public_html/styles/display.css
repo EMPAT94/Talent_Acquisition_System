@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 i.menu_black {
+    cursor: pointer;
     content:url(../icons/menu_black.svg);
 }
 i.menu_white {

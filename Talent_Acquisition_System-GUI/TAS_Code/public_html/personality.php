@@ -152,7 +152,8 @@ if (!isset($_SESSION['username'])) {
 
         <!-- Personality Profiles Start-->
         <div class ="container">
-            <ul class="collapsible" data-collapsible="accordion">                <li>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
                     <div class="collapsible-header teal darken-4 white-text">INxx</div>
                     <div class="collapsible-body">
                         <div class="collapsible popout" data-collapsible="accordion">
@@ -399,6 +400,13 @@ if (!isset($_SESSION['username'])) {
                 <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
             </div>
         </div>
+
+
+        <!-- Button at the bottom left for Back--> 
+        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+            <a class="waves-effect waves-light btn-large " id="back">Back</a>
+        </div>
+        <!--Button End -->
 
     </body>
 </html>

@@ -158,8 +158,19 @@ if (!isset($_SESSION['username'])) {
 
                 <div class="row container content ">
                     <h2 class="header "><a href="abouttest.html" class="yellow-text text-lighten-2">About MBTI and the Test</a></h2>
-                    <p class="white-text">Swiss psychiatrist Carl Jung developed a theory early in the 20th century to describe basic 
-                        individual preferences and explain similarities and differences between people.</p>
+                    <p class="white-text">
+                        Swiss psychiatrist Carl Jung developed a theory early in the 20th century to describe basic 
+                        individual preferences and explain similarities and differences between people.
+                        <br><br>
+                        In 1921, Jung published Psychological Types, 
+                        introducing the idea that each person has a psychological type. 
+                        The academic language of the book made it hard to read and so few people 
+                        could understand and use the ideas for practical purposes.
+                        <br><br>
+                        During World War II, two American women, Isabel Briggs Myers and her mother 
+                        Katharine Cook Briggs, set out to find an easier way for people to use Jung's 
+                        ideas in everyday life. They wanted people to be able to identify their 
+                        psychological types without having to sift through Jung's academic theory.</p>
                 </div>
             </div>
 
@@ -168,8 +179,16 @@ if (!isset($_SESSION['username'])) {
 
                 <div class="row container content">
                     <h2 class="header"><a href="instructions.html"  class="deep-orange-text text-accent-1">Instructions for the Test</a></h2>
-                    <p class="white-text ">Instructions are very necessary and must be read throughly before
-                        taking the test.</p>
+                    <p class="white-text ">
+                        Instructions are an important aspect to the any setting. 
+                        If one is having trouble following directions, they should try to examine 
+                        why this is happening. The reason could be an underlying problem, like a disinterest 
+                        in the subject matter, or it may very well be the
+                        instructions that are confusing and hard to understand.
+                        <br><br>
+                        Following instructions is very necessary in case of our MBTI test, as the results are
+                        hinged on user being able to correctly understand, answer and examine all aspects of our system.
+                    </p>
                 </div>
             </div>
 
@@ -177,16 +196,21 @@ if (!isset($_SESSION['username'])) {
                 <div class="parallax"><img src="images/Personalities.jpg" alt=""/></div>
                 <div class="row container content">
                     <h2 class="header"><a href="personality.html" class="indigo-text text-darken-1">Personality Profiles List</a></h2>
-                    <p class="white-text">Learn more about different types of personalities classified under
-                        the MBTI research</p>
+                    <p class="white-text">
+                        "It is up to each person to recognize his or her true preferences."
+                        <br><br>
+                        -Isabel Briggs Myers
+                        <br><br><br><br>
+                        The 16 personality types of the Myers-Briggs Type Indicator
+                        are listed on this page (click 'personalities' button below), follow on page guide to get extensive information on
+                        any personality type.</p>
                 </div>
             </div>
             <div class="parallax-container" id="Test">
                 <div class="parallax"><img src="images/ready.jpg" alt=""/></div>
                 <div class="row container content">
                     <h2 class="header"><a href="mbti.php" class="blue-grey-text">Take the MBTI test NOW!</a></h2>
-                    <p class="white-text">What are you waiting for? Take the test and find your hidden
-                        talents. You need to be logged in to take the test.</p>
+                    <p class="white-text">What are you waiting for? Note that you need to be registered to take the test.</p>
                 </div>
             </div>
         </div>

@@ -235,9 +235,16 @@ if (!isset($_SESSION['username'])) {
         </div>
 
 
-        <!-- Button at the bottom right for Login/Registration--> 
+        <!-- Button at the bottom right--> 
         <div class="go-btn" style="position: fixed; bottom: 20px; right: 20px;">
             <a class="waves-effect waves-light btn-large indigo" href="mbti.php">Take Test</a>
+        </div>
+        <!--Button End -->
+
+
+        <!-- Button at the bottom left for Back--> 
+        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+            <a class="waves-effect waves-light btn-large " id="back">Back</a>
         </div>
         <!--Button End -->
 

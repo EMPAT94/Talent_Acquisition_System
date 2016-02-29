@@ -23,12 +23,10 @@ $result = $client->sendCypherQuery($query, $parameters)->getRows();
 $op = json_encode($result);
 $data = json_decode($op);
 
-
-
-
 if ($data != null) {
     if ($data->n[0]->password == $password) {
         $_SESSION['username'] = $data->n[0]->fname;
+        $_SESSION['userid'] = $data->n[0]->email;
         print_r('0');
     } else {
         session_destroy();

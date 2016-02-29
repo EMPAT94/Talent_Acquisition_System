@@ -57,7 +57,7 @@ if (!isset($_SESSION['username'])) {
             echo '  <div class="chip" style = "position:fixed; top:20px; right:20px;"> <img src="' . $_SESSION['picpath'] . '" alt="Contact Person">' . $_SESSION['username'] . ' </div>';
         }
         ?>
-        
+
         <!-- Login Registration Form Start -->
         <div id="LRForm" class="modal">
             <div class="modal-content">
@@ -519,6 +519,13 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </div>
+
+
+        <!-- Button at the bottom left for Back--> 
+        <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
+            <a class="waves-effect waves-light btn-large " id="back">Back</a>
+        </div>
+        <!--Button End -->
 
 
     </body>
