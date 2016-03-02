@@ -23,23 +23,38 @@ if (!isset($_SESSION['username'])) {
         <script>
             $(document).ready(function () {
 
-                document.getElementsByName('home').disabled = true;
+                $downButton = $('#downButton');
+                $arrow = $('#downButton').find('i');
 
                 $('.parallax-container').css('height', $(window).height());
 
-                var root = $('html, body');
-                $('#down-button').click(function () {
-                    if (ht < $(document).height()) {
-                        $(root).animate({
-                            scrollTop: ht
+                var ht = 1;
+
+                $root = $('html, body');
+
+                $downButton.click(function () {
+                    if ($(window).scrollTop() + $(window).height() !== $(document).height()) {
+                        $root.animate({
+                            scrollTop: ht * $(window).height()
                         }, 3000);
+                        ht += 1;
+                    } else {
+                        ht = 1;
+                        $root.animate({
+                            scrollTop: 0
+                        }, 1000);
                     }
-                    ht = ht + ht;
-                    return false;
                 });
 
-
-
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                        $arrow.removeClass("down_white");
+                        $arrow.addClass("up_white");
+                    } else {
+                        $arrow.addClass("down_white");
+                        $arrow.removeClass("up_white");
+                    }
+                });
             });
         </script>
     </head>
@@ -79,14 +94,19 @@ if (!isset($_SESSION['username'])) {
         <!-- Menu bar on top left End-->
 
 
+        <a class="btn-floating btn-large waves-effect waves-light red" id="downButton" style="position: fixed;bottom: 20px; right: 20px;"><i class="down_white"></i></a>
+
+
         <!-- Login Registration Form Trigger -->
         <?php
         if ($flag) {    //if flag == true (user is not logged in)
-            echo '<a style = "position:fixed; top:20px; right:20px;" id = "members_btn" class =  "modal-trigger waves-effect waves-light btn" href = "#LRForm">Members</a>';
+            echo '<a style = "position:fixed; top:20px; right:20px;" id = "members_btn" class =  "modal-trigger waves-effect waves-light btn" href = "#LRForm">Login / Signup</a>';
         } else {
             echo '  <div class="chip" style = "position:fixed; top:20px; right:20px;"> <img src="' . $_SESSION['picpath'] . '" alt="Contact Person">' . $_SESSION['username'] . ' </div>';
         }
         ?>
+
+
         <!-- Login Registration Form Start -->
         <div id="LRForm" class="modal">
             <div class="modal-content">
@@ -111,27 +131,31 @@ if (!isset($_SESSION['username'])) {
                 <!-- Registration Form -->
                 <form name="log"  action="regProcessing.php" method="post"  class = "col s12 register hidden" >
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="first_name" type="text" class="validate" required autofocus>
                             <label for="first_name">First Name</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="last_name" type="text" class="validate" required >
                             <label for="last_name">Last Name</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 m6">
                             <input name="password" type="password" class="validate" required >
                             <label for="password">Password</label>
                         </div>
+                        <div class="input-field col s12 m6">
+                            <input name="confirm" type="password" class="validate" required >
+                            <label for="confirm">Confirm Password</label>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s10">
+                        <div class="input-field col s10 m10">
                             <input name="email" type="email" class="validate" required  >
                             <label for="email">Email</label>
                         </div>
-                        <div class = "input-field col s2">
+                        <div class = "input-field col s2 m2">
                             <button type="submit" class="btn-floating btn-large red" style="float:right;">
                                 <i class="send_white"></i>
                             </button>
@@ -145,7 +169,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <div class="modal-footer" >
-                <a class="modal-action waves-effect waves-green btn-flat " style="text-align:left;" id="logreg">Register</a>
+                <a class="modal-action waves-effect waves-green btn-flat " style="float:left" id="logreg">Register</a>
                 <a class="modal-action modal-close waves-effect waves-green btn-flat" style="text-align:left;">Close</a>
             </div>
         </div>
@@ -157,7 +181,7 @@ if (!isset($_SESSION['username'])) {
                 <div class="parallax"><img src="images/Testing.jpg" alt=""/></div>
 
                 <div class="row container content ">
-                    <h2 class="header "><a href="abouttest.html" class="yellow-text text-lighten-2">About MBTI and the Test</a></h2>
+                    <h2 class="header "><a href="abouttest.php" class="yellow-text text-lighten-2">About MBTI and the Test</a></h2>
                     <p class="white-text">
                         Swiss psychiatrist Carl Jung developed a theory early in the 20th century to describe basic 
                         individual preferences and explain similarities and differences between people.
@@ -178,7 +202,7 @@ if (!isset($_SESSION['username'])) {
                 <div class="parallax"><img src="images/instructions.jpg"></div>
 
                 <div class="row container content">
-                    <h2 class="header"><a href="instructions.html"  class="deep-orange-text text-accent-1">Instructions for the Test</a></h2>
+                    <h2 class="header"><a href="instructions.php"  class="deep-orange-text text-accent-1">Instructions for the Test</a></h2>
                     <p class="white-text ">
                         Instructions are an important aspect to the any setting. 
                         If one is having trouble following directions, they should try to examine 
@@ -195,7 +219,7 @@ if (!isset($_SESSION['username'])) {
             <div class="parallax-container" id="Personality">
                 <div class="parallax"><img src="images/Personalities.jpg" alt=""/></div>
                 <div class="row container content">
-                    <h2 class="header"><a href="personality.html" class="indigo-text text-darken-1">Personality Profiles List</a></h2>
+                    <h2 class="header"><a href="personality.php" class="indigo-text text-darken-1">Personality Profiles List</a></h2>
                     <p class="white-text">
                         "It is up to each person to recognize his or her true preferences."
                         <br><br>

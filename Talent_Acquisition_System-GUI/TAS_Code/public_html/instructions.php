@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 <html>
     <head>
-        <title>TAS</title>
+        <title>Instructions</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -80,27 +80,31 @@ if (!isset($_SESSION['username'])) {
                 <!-- Registration Form -->
                 <form name="log"  action="regProcessing.php" method="post"  class = "col s12 register hidden" >
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="first_name" type="text" class="validate" required autofocus>
                             <label for="first_name">First Name</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="last_name" type="text" class="validate" required >
                             <label for="last_name">Last Name</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 m6">
                             <input name="password" type="password" class="validate" required >
                             <label for="password">Password</label>
                         </div>
+                        <div class="input-field col s12 m6">
+                            <input name="confirm" type="password" class="validate" required >
+                            <label for="confirm">Confirm Password</label>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s10">
+                        <div class="input-field col s10 m10">
                             <input name="email" type="email" class="validate" required  >
                             <label for="email">Email</label>
                         </div>
-                        <div class = "input-field col s2">
+                        <div class = "input-field col s2 m2">
                             <button type="submit" class="btn-floating btn-large red" style="float:right;">
                                 <i class="send_white"></i>
                             </button>
@@ -114,7 +118,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <div class="modal-footer" >
-                <a class="modal-action waves-effect waves-green btn-flat " style="text-align:left;" id="logreg">Register</a>
+                <a class="modal-action waves-effect waves-green btn-flat " style="float:left" id="logreg">Register</a>
                 <a class="modal-action modal-close waves-effect waves-green btn-flat" style="text-align:left;">Close</a>
             </div>
         </div>
@@ -136,7 +140,7 @@ if (!isset($_SESSION['username'])) {
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header ">2. Have enough Spare time.</div>
+                    <div class="collapsible-header ">2. Have enough Spare time. {minimum 10 minutes}</div>
                     <div class="collapsible-body ">
                         <p>
                             Sure, we have drastically reduced the number of questions required to predict your personality, but it
@@ -146,11 +150,20 @@ if (!isset($_SESSION['username'])) {
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header ">3. Check your Internet Connection.</div>
+                    <div class="collapsible-header ">3. Consistent Internet Connection Required.</div>
                     <div class="collapsible-body ">
                         <p>
                             Our test extracts data from  and processes the results on server side, thus is it extremely necessary to 
                             have a consistent Internet connection or it may jeopardize your test process.   
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header ">4. It is preferable that you be alone.</div>
+                    <div class="collapsible-body ">
+                        <p>
+                            It is essential that your answers are true to yourself; if you are with someone or among a group
+                            , then your choices might vary, since we tend to be socially conscious with our actions. 
                         </p>
                     </div>
                 </li>

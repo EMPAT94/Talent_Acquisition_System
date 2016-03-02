@@ -93,7 +93,6 @@ once for every time a user logs in, rest of the linking will be handled by home.
         <div id="LRForm" class="modal">
             <div class="modal-content">
 
-
                 <!-- Login Form -->
                 <form action="logProcessing.php" method="post"  class = "login col s12" >
                     <div class = "row">
@@ -112,29 +111,33 @@ once for every time a user logs in, rest of the linking will be handled by home.
                 </form>
 
                 <!-- Registration Form -->
-                <form action="regProcessing.php" method="post"  class = "col s12 register hidden" >
+                <form name="log"  action="regProcessing.php" method="post"  class = "col s12 register hidden" >
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="first_name" type="text" class="validate" required autofocus>
                             <label for="first_name">First Name</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="last_name" type="text" class="validate" required >
                             <label for="last_name">Last Name</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 m6">
                             <input name="password" type="password" class="validate" required >
                             <label for="password">Password</label>
                         </div>
+                        <div class="input-field col s12 m6">
+                            <input name="confirm" type="password" class="validate" required >
+                            <label for="confirm">Confirm Password</label>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s10">
+                        <div class="input-field col s10 m10">
                             <input name="email" type="email" class="validate" required  >
                             <label for="email">Email</label>
                         </div>
-                        <div class = "input-field col s2">
+                        <div class = "input-field col s2 m2">
                             <button type="submit" class="btn-floating btn-large red" style="float:right;">
                                 <i class="send_white"></i>
                             </button>
@@ -144,11 +147,11 @@ once for every time a user logs in, rest of the linking will be handled by home.
             </div>
 
             <div class="progress">
-                <div id="progressBar"></div>
+                <div id="progressBar" class=""></div>
             </div>
 
             <div class="modal-footer" >
-                <a class="modal-action waves-effect waves-green btn-flat " style="text-align:left;" id="logreg">Register</a>
+                <a class="modal-action waves-effect waves-green btn-flat " style="float:left" id="logreg">Register</a>
                 <a class="modal-action modal-close waves-effect waves-green btn-flat" style="text-align:left;">Close</a>
             </div>
         </div>
@@ -173,8 +176,8 @@ once for every time a user logs in, rest of the linking will be handled by home.
                     <a href="#instructions_modal" style="float:right; right:200px;" class="modal-trigger ">
                         <img src="images/redBrain.png" style="position:absolute;top:25px;left:500px;" class="tooltipped" data-delay="50" data-tooltip="Instructions on how to take the test" alt="Instructions">
                     </a>
-                    <a style="float:right; right:200px;" class=" " >
-                        <img src="images/greenBrain.png" style="position:absolute;top:300px;left:300px;" class="tooltipped" data-position="left" data-delay="50" data-tooltip="Under Development" alt="Upcoming">
+                    <a href="#developers_modal" style="float:right; right:200px;" class="modal-trigger" >
+                        <img src="images/greenBrain.png" style="position:absolute;top:300px;left:300px;" class="tooltipped" data-position="left" data-delay="50" data-tooltip="A sneak peak of the development team members." alt="Upcoming">
                     </a>        
                     <a href="#personality_modal"  style="float:right; right:200px;" class="modal-trigger" >
                         <img src="images/blueBrain.png" style="position:absolute;top:200px;left:700px;" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Check out various profiles here." alt="Personality Profiles">
@@ -191,7 +194,7 @@ once for every time a user logs in, rest of the linking will be handled by home.
 
             <!-- Button at the bottom right for Help--> 
             <div class="go-btn" style="position: fixed; bottom: 20px; left: 20px;">
-                <a class="waves-effect waves-light btn-large green">Help</a>
+                <a class="waves-effect waves-light btn-large green" href="help.php">Help</a>
             </div>
             <!--Button End -->
 
@@ -258,6 +261,16 @@ once for every time a user logs in, rest of the linking will be handled by home.
                 </div>
             </div>
 
+            <div id="developers_modal" class="modal light-green">
+                <div class="modal-content white-text">
+                    Check out a quick overview of the site developers;
+                    who they are, where they are from, who did what, and the reason behind the site's development.
+                    <div class="modal-footer light-green">
+                        <a href="developers.php" class="modal-action waves-effect waves-green btn-flat yellow-text text-lighten-2">Developers</a>
+                    </div>
+                </div>
+            </div>
+
             <div id="personality_modal" class="modal indigo darken-1">
                 <div class="modal-content white-text">
                     "It is up to each person to recognize his or her true preferences."
@@ -268,7 +281,7 @@ once for every time a user logs in, rest of the linking will be handled by home.
                     are listed on this page (click 'personalities' button below), follow on page guide to get extensive information on
                     any personality type.
                     <div class="modal-footer indigo darken-1">
-                        <a href="instructions.php" class="modal-action waves-effect waves-green btn-flat grey-text text-lighten-2">Personalities</a>
+                        <a href="instructions.php" class="modal-action waves-effect waves-green btn-flat deep-orange-text text-accent-1">Personalities</a>
                     </div>
                 </div>
             </div>

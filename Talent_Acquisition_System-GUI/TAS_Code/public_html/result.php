@@ -65,7 +65,7 @@ if ($op == null) {
 ?>
 <html>
     <head>
-        <title>Test Page</title>
+        <title>Result</title>
         <script src="scripts/jquery.js"></script>
         <script src="scripts/materialize.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/materialize.css" />
@@ -252,7 +252,7 @@ if ($op == null) {
                 <div class="card red darken-3">
                     <div class="card-content ">
 
-                        @Certified By TAS. Signature : 
+                        @Certified By TAS Agent Signature : 
 
                     </div>
                 </div>
@@ -284,11 +284,10 @@ if ($op == null) {
         <!-- Menu bar on top left End-->
 
         <!-- Logout Trigger -->
-        <a style="position:fixed; top:20px; right:20px;" id="members_btn" class="waves-effect waves-light btn red" href="index.php">Log Out</a>
+        <a style="position:fixed; top:20px; right:20px;" class="waves-effect waves-light btn red" href="logOut.php">Log Out</a>
 
 
         <div class="instructions container">
-
             <div class="row">
                 <div class="col s12 m12">
                     <div class="card teal darken-1">
@@ -330,7 +329,7 @@ if ($op == null) {
                             <?php
                             foreach ($portraits as $value) {
                                 echo "$value";
-                                echo ' < img class = "materialboxed" data-caption = "' . $value . '" style = "width : 100%; border: 3px solid white;" src = "images/portraits/' . $value . '.jpg"><br><br>';
+                                echo '<img class = "materialboxed" data-caption = "' . $value . '" style = "width : 100%; border: 3px solid white;" src = "images/portraits/' . $value . '.jpg" /><br><br>';
                             }
                             ?>
                         </div>
@@ -341,7 +340,7 @@ if ($op == null) {
 
             <ul class="collapsible" data-collapsible="expandable">
                 <li>
-                    <div class="collapsible-header indigo darken-4 white-text">Strengths :</div>
+                    <div class="collapsible-header indigo darken-4 white-text">Strengths (Click to Expand)</div>
                     <div class="collapsible-body">
                         <p>
                             <?php
@@ -354,7 +353,7 @@ if ($op == null) {
                 </li>
 
                 <li>
-                    <div class="collapsible-header deep-purple lighten-2">Weaknesses :</div>
+                    <div class="collapsible-header deep-purple lighten-2">Weaknesses</div>
                     <div class="collapsible-body">
                         <p>
                             <?php
@@ -369,7 +368,7 @@ if ($op == null) {
 
             <ul class="collapsible" data-collapsible="expandable">
                 <li>
-                    <div class="collapsible-header  teal darken-4 white-text">Potential Problem Areas :</div>
+                    <div class="collapsible-header  teal darken-4 white-text">Potential Problem Areas</div>
                     <div class="collapsible-body">
                         <p>
                             <?php
@@ -381,7 +380,7 @@ if ($op == null) {
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header  lime lighten-1">Solutions :</div>
+                    <div class="collapsible-header  lime lighten-1">Solutions</div>
                     <div class="collapsible-body">
                         <p>
                             <?php

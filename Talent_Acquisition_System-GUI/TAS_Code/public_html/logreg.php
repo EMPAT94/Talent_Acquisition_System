@@ -20,11 +20,21 @@ if (isset($_SESSION['username'])) {
         <link rel="shortcut icon" href="favicon.ico">
     </head>
     <body>
-        <nav >
-            <div class="nav-wrapper blue-grey accent-1">
-                <a href="#!" class="brand-logo">Login | Register</a>
-            </div>
-        </nav>
+        <!-- Menu bar on top left Start-->
+        <a data-activates="slide-out" class="button-collapse">
+            <i class="menu_black"></i>
+        </a>
+        <ul id="slide-out" class="side-nav fixed hidden">
+            <li><a name="home" class = "disabled">Home</a></li>
+            <li><a name="about" href="abouttest.php">About the Test</a></li>
+            <li><a name="instructions" href="instructions.php">Instructions</a></li>
+            <li><a name="personality" href="personality.php">Personality Types</a></li>
+            <li><a name="mbti" href="mbti.php">Take Test</a></li>
+            <li><a name="profile" href="profile.php">Your Profile</a></li>
+            <li><a name="help" href="help.php">Site Help</a></li>
+            <li><a name="developers" href="developers.php">Developers</a></li>         
+        </ul>
+        <!-- Menu bar on top left End-->
 
         <br><br>
 
@@ -41,50 +51,52 @@ if (isset($_SESSION['username'])) {
                 <!-- Login Form -->
                 <form action="logProcessing.php" method="post"  class = "login col s12 " >
                     <div class = "row">
-                        <div class = "input-field col s5">
+                        <div class = "input-field col s12 m5">
                             <input name = "l_email" type = "email" class = "validate" required autofocus>
                             <label for = "l_email">Email</label>
                         </div>
-                        <div class = "input-field col s5">
+                        <div class = "input-field col s10 m5">
                             <input name = "l_pwd" type = "password" class = "validate" required >
                             <label for = "l_pwd">Password</label>
                         </div>
-                        <div class = "input-field col s2">
+                        <div class = "input-field col s2 m2">
                             <button type="submit" class="btn-floating btn-large red" style="float:right;"><i class="send_white"></i></button>
                         </div>
                     </div>
                 </form>
 
-                <!-- Registration Form -->
                 <form name="log"  action="regProcessing.php" method="post"  class = "col s12 register hidden" >
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="first_name" type="text" class="validate" required autofocus>
                             <label for="first_name">First Name</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input name="last_name" type="text" class="validate" required >
                             <label for="last_name">Last Name</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 m6">
                             <input name="password" type="password" class="validate" required >
                             <label for="password">Password</label>
                         </div>
+                        <div class="input-field col s12 m6">
+                            <input name="confirm" type="password" class="validate" required >
+                            <label for="confirm">Confirm Password</label>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s10">
+                        <div class="input-field col s10 m10">
                             <input name="email" type="email" class="validate" required  >
                             <label for="email">Email</label>
                         </div>
-                        <div class = "input-field col s2">
+                        <div class = "input-field col s2 m2">
                             <button type="submit" class="btn-floating btn-large red" style="float:right;">
                                 <i class="send_white"></i>
                             </button>
                         </div>
                     </div>  
-
                 </form>
 
 

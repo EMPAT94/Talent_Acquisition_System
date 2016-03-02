@@ -5,6 +5,7 @@ $(document).ready(function () {
     $('.scrollspy').scrollSpy();
     $('.modal-trigger').leanModal();
     $('.materialboxed').materialbox();
+    $('.scrollspy').scrollSpy();
 
 
     $('.menu_black').click(function () {

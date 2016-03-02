@@ -27,7 +27,7 @@ if (isset($_POST['gender'])) {
     echo "Data Successfully Added, Reload Page.";
 }
 if (isset($_FILES["file"])) {
-    $name = $_SESSION['username'] . ".jpg";
+    $name = $_SESSION['userid'] . ".jpg";
     $file = $_FILES['file']['tmp_name'];
     move_uploaded_file($file, "images/profile_pics/" . $name);
 

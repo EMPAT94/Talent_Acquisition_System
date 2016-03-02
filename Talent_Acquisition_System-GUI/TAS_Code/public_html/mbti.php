@@ -8,7 +8,7 @@ $_SESSION['flag'] = "1";
 ?>
 <html>
     <head>
-        <title>Test in Progress</title>
+        <title>Test</title>
         <script src="scripts/jquery.js"></script>
         <script src="scripts/materialize.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/materialize.css" />
@@ -160,14 +160,25 @@ $_SESSION['flag'] = "1";
         ?>
         <div class="instructions container">
             <div class="row">
-                <div class="col s12 m8">
+                <div class="col s12 m6">
                     <div class="card blue-grey darken-1">
                         <div class="card-content white-text">
                             <span class="card-title">Important Instructions : </span><br><br>
                             <p>1. Do not Refresh or Cancel. </p><br>
-                            <p>2. Think and answer; once answered, cannot go back. </p><br>
+                            <p>2. Think and answer; once answered, it is not possible to go back. </p><br>
                             <p>3. There are 20 Questions in total; result is produced only when
                                 all 20 are answered. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card teal darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">For Better Results : </span><br><br>
+                            <p>1. Give this test alone; we tend to make different choices
+                            with people around since our social conscience affects our actions</p><br>
+                            <p>2. Try to imagine yourself in the situation presented in the Scenes and chose the option
+                            that matches you most.</p><br>
                         </div>
                     </div>
                 </div>
