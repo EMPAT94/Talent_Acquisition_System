@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 28, 2015, 12:42:01 PM
+    Author     : Pritesh
+*/
+
+i.menu_black {
+    cursor: pointer;
+    content:url(../icons/menu_black.svg);
+}
+i.menu_white {
+    content:url(../icons/menu_white.svg);
+}
+i.send_white {
+    content:url(../icons/send_white_24px.svg);
+}
+i.down_white {
+    content:url(../icons/keyboard_arrow_down_white.svg);
+}
+i.up_white {
+    content:url(../icons/keyboard_arrow_up_white.svg);
+}
+i.help_white {
+    content:url(../icons/help_white.svg);
+}
+i.down_black {
+    content:url(../icons/keyboard_arrow_down_black.svg);
+}
+i.up_black {
+    content:url(../icons/keyboard_arrow_up_black.svg);
+}
+
+i.close_black {
+    content:url(../icons/close_black.svg);
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.07);
+    letter-spacing: 1.5px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+i {
+    padding:20%;
+}
+i.card_bth {
+    padding:1%;
+    position:relative;
+    margin-right: 5px;
+}
+.hidden{
+    display:none;
+}
+
+
+.quote {
+    font-weight:  bold;
+    letter-spacing: 2px;
+    font-style:italic;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+a.button-collapse {
+    top:10px;
+    left:20px;
+    position: absolute;
+    z-index: 99;
+}
+
+
+
+a.disabled  {
+    cursor: not-allowed;
+}

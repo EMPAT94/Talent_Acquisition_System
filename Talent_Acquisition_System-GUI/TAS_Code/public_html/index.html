@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!--
+This page acts as a starting default template that redirects user to either index.php or home.php
+depending on their windows width.
+-->
+<html>
+    <head>
+        <script>
+            if (window.matchMedia('(min-width: 1360px)').matches) {
+                location.href = "index.php";
+            } else {
+                location.href = "home.php";
+            }
+        </script>
+    </head>
+</html>
