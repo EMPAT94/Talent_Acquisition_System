@@ -45,14 +45,16 @@ if (!isset($_SESSION['username'])) {
             <li><a name="home" href="home.php">Home</a></li>
             <li><a name="about" href="abouttest.php">About the Test</a></li>
             <li><a name="instructions" href="instructions.php">Instructions</a></li>
-            <!--<li><a name="personality" class = "disabled" >Personality Types</a></li>-->
+            <li><a name="personality" href="personality.php">Personality Types</a></li>
             <li><a name="mbti" href="mbti.php">Take Test</a></li>
-            <li><a name="profile" href="profile.php">Your Profile</a></li>
-            <li><a name="help" href="help.php">Site Help</a></li>
+
+            <!--<li><a name="help" href="help.php">Site Help</a></li>-->
             <li><a name="developers" href="developers.php">Developers</a></li>
             <?php
             if (!$flag) {
-                echo '<li><a name="logout" href="logOut.php">Log Out</a></li>';
+                echo '<li><a name="profile" href="profile.php">Your Profile</a></li><li><a name="logout" href="logOut.php">Log Out</a></li>';
+            } else {
+                echo '<li><a name="logout" href="logreg.php">Log In</a></li>';
             }
             ?>
         </ul>
@@ -108,6 +110,9 @@ if (!isset($_SESSION['username'])) {
                         <div class="input-field col s12 m6">
                             <input name="confirm" type="password" class="validate" required >
                             <label for="confirm">Confirm Password</label>
+                        </div>
+                        <div class="col s12 m12">
+                            <label class="red-text">Password Must Contain min 6 characters with 1 Uppercase, 1 Lowercase and 1 Number.</label>
                         </div>
                     </div>
                     <div class="row">
@@ -183,7 +188,7 @@ if (!isset($_SESSION['username'])) {
                             <br><br>
                             Note that this is a smart menu, so the list changes depending on your current state and page.
                             e.g. if you are logged in, then you'll see an option to log out at the bottom. If you aren't
-                            logged in, then you won't see it.                                   
+                            logged in, then you will see an option to log In instead.                                   
                         </p>
                     </div>
                 </div>
@@ -200,7 +205,10 @@ if (!isset($_SESSION['username'])) {
                             sent to the backend for further processing.
                             <br><br>
                             Certain scenarios where this button is seen are on the login/register module and while giving
-                            the test to submit your prefered choice.
+                            the test to submit your preferred choice.
+                            <br><br>
+                            Note that some actions may require intensive processing, you'll see a progress bar whilst the server's
+                            is processing your request, just have patience and it'll be fine.
                         </p>
                     </div>
                 </div>

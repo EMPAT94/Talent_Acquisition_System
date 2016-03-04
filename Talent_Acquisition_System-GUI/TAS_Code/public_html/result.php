@@ -72,7 +72,7 @@ if ($op == null) {
 
         <script src="scripts/animation.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="icon" href="favicon.ico">
 
     <scrip>
 
@@ -108,7 +108,9 @@ if ($op == null) {
                 color: black !important; 
                 text-shadow: none !important; 
                 filter:none !important;
-                -ms-filter: none !important; } 
+                -ms-filter: none !important; 
+                font-family: Times New Roman;
+            } 
             p a, p a:visited { 
                 color: #444 !important; 
                 text-decoration: underline; 
@@ -128,10 +130,6 @@ if ($op == null) {
             .hide-on-print { display: none !important; }
             .print-only { display: block !important; }
 
-            .collapsible-body {
-                display:anything;
-            }
-
         }
     </style>
 
@@ -139,48 +137,31 @@ if ($op == null) {
     <!-- Print Content Start -->
 
     <div class="row hidden print-only" >
-        <div class="col s12 m12 print-only hidden">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <?php
-                    echo '<span class="card-title" style="text-align:center;"> Certificate </span>
-                        <p> This is to certify that ' . $fname . ' ' . $lname . ' has 
-                     successfully completed the standard test 
-                        prescribed by TAS  on ' . date("d/m/Y") . ' and has acquired following results.
-                        </p> ';
-                    ?>
-                </div>
-            </div>
-        </div>
         <div class="col s12 m12">
             <div class="card blue-grey darken-1">
-                <div class="card-content">
-                    <?php echo "<h3>Personality Type : <b> " . strtoupper($type) . "</b></h3>"; ?>
+                <div class="card-content black-text">
+                    <?php
+                    echo '<div class="card-title" style="text-align:center;width:100%;"><h4> CERTIFICATE </h4></div>
+                        <p> This is to certify that ' . $fname . ' ' . $lname . ' has 
+                     successfully completed the standard test 
+                        prescribed by Talent Acquisition System  on ' . date("d/m/Y") . ' and has acquired following results.
+                        </p> ';
+                    ?>
+                    <?php echo "<br><h5>Personality Type : <b> " . strtoupper($type) . "</b></h5>"; ?>
                     <?php
                     echo $typestr;
-                    echo "<br><h5><b>General Info : </b></h5>";
+
+                    echo '<br><br><span class="card-title">General Info : </span>';
                     foreach ($summary as $value) {
                         echo "<br> $value <br>";
                     }
                     ?>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m12">
-            <div class="card blue-grey darken-1">
-                <div class="card-content">
                     <span class="card-title">Traits :</span>
                     <?php
                     foreach ($traits as $value) {
                         echo "<br> $value <br>";
                     }
                     ?>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m12">
-            <div class="card blue-grey darken-1">
-                <div class="card-content">
                     <span class="card-title">Strengths :</span>
 
                     <?php
@@ -188,12 +169,6 @@ if ($op == null) {
                         echo "<br> $value <br>";
                     }
                     ?>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m12">
-            <div class="card blue-grey darken-1">
-                <div class="card-content">
                     <span class="card-title">Weaknesses :</span>
 
                     <?php
@@ -201,12 +176,6 @@ if ($op == null) {
                         echo "<br> $value <br>";
                     }
                     ?>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m12">
-            <div class="card blue-grey darken-1">
-                <div class="card-content">
                     <span class="card-title">Potential Problem Areas :</span>
 
                     <?php
@@ -214,12 +183,6 @@ if ($op == null) {
                         echo "<br> $value <br>";
                     }
                     ?>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m12">
-            <div class="card blue-grey darken-1">
-                <div class="card-content ">
                     <span class="card-title">Solutions :</span>
 
                     <?php
@@ -227,13 +190,7 @@ if ($op == null) {
                         echo "<br> $value <br>";
                     }
                     ?>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m12">
-            <div class="card blue-grey darken-1">
-                <div class="card-content ">
+                    <br>
                     <span class="card-title">10 Rules to Live By :</span>
 
                     <?php
@@ -244,21 +201,8 @@ if ($op == null) {
                 </div>
             </div>
         </div>
-
-
-
-        <div class="row">
-            <div class="col s12 m12">
-                <div class="card red darken-3">
-                    <div class="card-content ">
-
-                        @Certified By TAS Agent Signature : 
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <br>
+        <div style="width:100%; text-align: center; color: black;" >Certified By TAS </div>
     </div>
     <!-- Print Content End -->
 
@@ -275,9 +219,9 @@ if ($op == null) {
             <li><a name="instructions" href="instructions.php">Instructions</a></li>
             <li><a name="personality" href="personality.php">Personality Types</a></li>
             <li><a name="mbti" href="mbti.php">Take Test</a></li>
-            <li><a name="profile" href="profile.php">Your Profile</a></li>
             <li><a name="help" href="help.php">Site Help</a></li>
             <li><a name="developers" href="developers.php">Developers</a></li>
+            <li><a name="profile" href="profile.php">Your Profile</a></li>
             <li><a name="logout" href="logOut.php">Log Out</a></li>
 
         </ul>

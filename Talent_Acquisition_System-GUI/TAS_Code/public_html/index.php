@@ -23,7 +23,7 @@ once for every time a user logs in, rest of the linking will be handled by home.
 
         <script src="scripts/animation.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/display.css" />
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
         <script>
             $(document).ready(function () {
@@ -124,12 +124,15 @@ once for every time a user logs in, rest of the linking will be handled by home.
                     </div>
                     <div class="row">
                         <div class="input-field col s12 m6">
-                            <input name="password" type="password" class="validate" required >
+                            <input name="password" type="password" class="validate" required>
                             <label for="password">Password</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <input name="confirm" type="password" class="validate" required >
                             <label for="confirm">Confirm Password</label>
+                        </div>
+                        <div class="col s12 m12">
+                            <label class="red-text">Password Must Contain min 6 characters with 1 Uppercase, 1 Lowercase and 1 Number.</label>
                         </div>
                     </div>
                     <div class="row">
@@ -137,6 +140,7 @@ once for every time a user logs in, rest of the linking will be handled by home.
                             <input name="email" type="email" class="validate" required  >
                             <label for="email">Email</label>
                         </div>
+
                         <div class = "input-field col s2 m2">
                             <button type="submit" class="btn-floating btn-large red" style="float:right;">
                                 <i class="send_white"></i>
@@ -281,7 +285,7 @@ once for every time a user logs in, rest of the linking will be handled by home.
                     are listed on this page (click 'personalities' button below), follow on page guide to get extensive information on
                     any personality type.
                     <div class="modal-footer indigo darken-1">
-                        <a href="instructions.php" class="modal-action waves-effect waves-green btn-flat deep-orange-text text-accent-1">Personalities</a>
+                        <a href="personality.php" class="modal-action waves-effect waves-green btn-flat deep-orange-text text-accent-1">Personalities</a>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ $email = htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST['password']);
 $confirm = htmlspecialchars($_POST['confirm']);
 
-$querya = 'MATCH (n:User) WHERE n.email = {email} RETURN n';
+$querya = 'MATCH (n:User {email: {email}}) RETURN n';
 $parametersa = ['email' => $email];
 $result = $client->sendCypherQuery($querya, $parametersa)->getRows();
 
@@ -48,10 +48,8 @@ if ($data == null) {
     if ($check == NULL) {
         $query = 'CREATE (ee:User {fname: {fname}, lname: {lname}, email: {email}, password: {password} })';
         $parameters = ['fname' => $firstName, 'lname' => $lastName, 'email' => $email, 'password' => $password];
-        $response = $client->sendCypherQuery($query, $parameters);
-        $_SESSION['username'] = $firstName;
-        $_SESSION['userid'] = $email;
-        print_r('Registration Successfull, Try Logging In Now!');
+        $response = $client->sendCypherQuery($query, $parameters);    
+        print_r('Registration Successful, Try Logging in Now!');
     } else {
         session_destroy();
         print_r($check);

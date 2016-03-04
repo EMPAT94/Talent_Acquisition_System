@@ -35,12 +35,13 @@ if (!isset($_SESSION['username'])) {
             <!--<li><a name="instructions" class = "disabled">Instructions</a></li>-->
             <li><a name="personality" href="personality.php">Personality Types</a></li>
             <li><a name="mbti" href="mbti.php">Take Test</a></li>
-            <li><a name="profile" href="profile.php">Your Profile</a></li>
             <li><a name="help" href="help.php">Site Help</a></li>
             <li><a name="developers" href="developers.php">Developers</a></li>
             <?php
             if (!$flag) {
-                echo '<li><a name="logout" href="logOut.php">Log Out</a></li>';
+                echo '<li><a name="profile" href="profile.php">Your Profile</a></li><li><a name="logout" href="logOut.php">Log Out</a></li>';
+            } else {
+                echo '<li><a name="logout" href="logreg.php">Log In</a></li>';
             }
             ?>
         </ul>
@@ -73,6 +74,9 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class = "input-field col s2">
                             <button type="submit" class="btn-floating btn-large red" style="float:right;"><i class="send_white"></i></button>
+                        </div>                     
+                        <div class="col s12 m12">
+                            <label class="red-text">Password Must Contain min 6 characters with 1 Uppercase, 1 Lowercase and 1 Number.</label>
                         </div>
                     </div>
                 </form>

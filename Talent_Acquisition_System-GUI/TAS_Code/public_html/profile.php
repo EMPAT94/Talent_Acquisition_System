@@ -74,16 +74,16 @@ if (isset($data->u[0]->country)) {
             <i class="menu_black"></i>
         </a>
         <ul id="slide-out" class="side-nav fixed hidden">
-            <!--<li><a name="home" class = "disabled">Home</a></li>-->
+            <li><a name="home" href="home.php">Home</a></li>
             <li><a name="about" href="abouttest.php">About the Test</a></li>
             <li><a name="instructions" href="instructions.php">Instructions</a></li>
             <li><a name="personality" href="personality.php">Personality Types</a></li>
             <li><a name="mbti" href="mbti.php">Take Test</a></li>
-            <li><a name="profile" href="profile.php">Your Profile</a></li>
+            <!--<li><a name="profile" href="profile.php">Your Profile</a></li>-->
             <li><a name="help" href="help.php">Site Help</a></li>
             <li><a name="developers" href="developers.php">Developers</a></li>
-           <li><a name="logout" href="logOut.php">Log Out</a></li>
-           
+            <li><a name="logout" href="logOut.php">Log Out</a></li>
+
         </ul>
         <!-- Menu bar on top left End-->
 
@@ -222,8 +222,8 @@ if (isset($data->u[0]->country)) {
                     <div id="progressBar"></div>
                 </div>
                 <ul>
-                    <li>Only jpg Images allowed</li>
-                    <li>Max size 2 MB</li>
+                    <li>Only jpg images allowed</li>
+                    <li>Max size 10 MB</li>
                     <li>Only One image can be uploaded at a time</li>
                 </ul>
             </div>

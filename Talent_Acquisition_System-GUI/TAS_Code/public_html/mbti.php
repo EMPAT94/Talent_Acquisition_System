@@ -143,9 +143,9 @@ $_SESSION['flag'] = "1";
             <li><a name="instructions" href="instructions.php">Instructions</a></li>
             <li><a name="personality" href="personality.php">Personality Types</a></li>
             <!--<li><a name="mbti" class = "disabled">Take Test</a></li>-->
-            <li><a name="profile" href="profile.php">Your Profile</a></li>
             <li><a name="help" href="help.php">Site Help</a></li>
             <li><a name="developers" href="developers.php">Developers</a></li>
+            <li><a name="profile" href="profile.php">Your Profile</a></li>
             <li><a name="logout" href="logOut.php">Log Out</a></li>
         </ul>
         <!-- Menu bar on top left End-->

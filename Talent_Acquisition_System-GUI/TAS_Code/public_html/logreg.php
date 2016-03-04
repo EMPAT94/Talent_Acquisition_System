@@ -25,12 +25,11 @@ if (isset($_SESSION['username'])) {
             <i class="menu_black"></i>
         </a>
         <ul id="slide-out" class="side-nav fixed hidden">
-            <li><a name="home" class = "disabled">Home</a></li>
+            <li><a name="home" href="home.php">Home</a></li>
             <li><a name="about" href="abouttest.php">About the Test</a></li>
             <li><a name="instructions" href="instructions.php">Instructions</a></li>
             <li><a name="personality" href="personality.php">Personality Types</a></li>
             <li><a name="mbti" href="mbti.php">Take Test</a></li>
-            <li><a name="profile" href="profile.php">Your Profile</a></li>
             <li><a name="help" href="help.php">Site Help</a></li>
             <li><a name="developers" href="developers.php">Developers</a></li>         
         </ul>
@@ -84,6 +83,10 @@ if (isset($_SESSION['username'])) {
                         <div class="input-field col s12 m6">
                             <input name="confirm" type="password" class="validate" required >
                             <label for="confirm">Confirm Password</label>
+                        </div>
+
+                        <div class="col s12 m12">
+                            <label class="red-text">Password Must Contain min 6 characters with 1 Uppercase, 1 Lowercase and 1 Number.</label>
                         </div>
                     </div>
                     <div class="row">

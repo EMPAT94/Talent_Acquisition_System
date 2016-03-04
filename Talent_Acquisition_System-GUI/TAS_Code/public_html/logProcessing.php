@@ -16,7 +16,7 @@ $client = ClientBuilder::create()
 $email = htmlspecialchars($_POST['l_email']);
 $password = htmlspecialchars($_POST['l_pwd']);
 
-$query = 'MATCH (n:User) WHERE n.email = {email} RETURN n';
+$query = 'MATCH (n:User {email:{email}} ) RETURN n';
 $parameters = ['email' => $email];
 $result = $client->sendCypherQuery($query, $parameters)->getRows();
 
@@ -26,7 +26,7 @@ $data = json_decode($op);
 if ($data != null) {
     if ($data->n[0]->password == $password) {
         $_SESSION['username'] = $data->n[0]->fname;
-        $_SESSION['userid'] = $data->n[0]->email;
+        $_SESSION['userid'] = $email;
         print_r('0');
     } else {
         session_destroy();

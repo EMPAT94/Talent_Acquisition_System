@@ -36,14 +36,15 @@ if (!isset($_SESSION['username'])) {
             <li><a name="home" href="home.php">Home</a></li>
             <li><a name="about" href="abouttest.php">About the Test</a></li>
             <li><a name="instructions" href="instructions.php">Instructions</a></li>
-            <!--<li><a name="personality" class = "disabled" >Personality Types</a></li>-->
+            <li><a name="personality" href="personality.php">Personality Types</a></li>
             <li><a name="mbti" href="mbti.php">Take Test</a></li>
-            <li><a name="profile" href="profile.php">Your Profile</a></li>
             <li><a name="help" href="help.php">Site Help</a></li>
-            <li><a name="developers" href="developers.php">Developers</a></li>
+            <!--<li><a name="developers" href="developers.php">Developers</a></li>-->
             <?php
             if (!$flag) {
-                echo '<li><a name="logout" href="logOut.php">Log Out</a></li>';
+                echo '<li><a name="profile" href="profile.php">Your Profile</a></li><li><a name="logout" href="logOut.php">Log Out</a></li>';
+            } else {
+                echo '<li><a name="logout" href="logreg.php">Log In</a></li>';
             }
             ?>
         </ul>
@@ -99,6 +100,9 @@ if (!isset($_SESSION['username'])) {
                         <div class="input-field col s12 m6">
                             <input name="confirm" type="password" class="validate" required >
                             <label for="confirm">Confirm Password</label>
+                        </div>                                             
+                        <div class="col s12 m12">
+                            <label class="red-text">Password Must Contain min 6 characters with 1 Uppercase, 1 Lowercase and 1 Number.</label>
                         </div>
                     </div>
                     <div class="row">
@@ -136,8 +140,8 @@ if (!isset($_SESSION['username'])) {
                                 This site has been developed as a Final Year Project by
                                 team of 4 students with interest in analytical psychology
 
-                                We hail from Fr. Conceico Rodriguez Institue of Technology, Vashi
-                                (Information technology Dept.)                                
+                                We hail from <a href="http://www.fcrit.ac.in/"> Fr. Conceicao Rodrigues Institue of Technology, Vashi </a>
+                                (Information Technology Dept.)                                
                             </blockquote>
                         </div>
                     </div>
